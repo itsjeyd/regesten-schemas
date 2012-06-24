@@ -156,6 +156,14 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="geogName">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="addNames" type="addNames" />
+      <!-- geogFeat? -->
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="landmark-body">
     <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
   </xs:complexType>
