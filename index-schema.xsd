@@ -33,7 +33,7 @@
       <xs:sequence>
 	<xs:choice minOccurs="1" maxOccurs="unbounded">
 	  <xs:element name="loc-item" type="loc-item" />
-	  <xs:element name="river-item" type="river-item" />
+	  <xs:element name="landmark-item" type="landmark-item" />
 	  <xs:element name="person-item" type="person-item" />
 	  <xs:element name="family-item" type="family-item" />
 	  <xs:element name="listing-item" type="listing-item" />
