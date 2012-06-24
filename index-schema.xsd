@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Simple Attributes -->
+  <xs:attribute name="itemid" type="xs:integer" />
+  <xs:attribute name="itemtype" type="xs:string" />
+  <xs:attribute name="itemvalue" type="xs:string" />
+  <xs:attribute name="regid" type="xs:integer" />
+  <xs:attribute name="settlement-type" type="xs:string" use="required" />
+  <xs:attribute name="w" type="xs:boolean" use="required" />
+  <xs:attribute name="w-ref" type="xs:string" />
+
+  <!-- Complex Attributes -->
+  <xs:attribute name="regiontype">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+	<xs:enumeration value="Bundesland" />
+	<xs:enumeration value="Departement" />
+	<xs:enumeration value="Provinz" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <!-- Simple Elements -->
+  <xs:element name="addName" type="xs:string" />
+  <xs:element name="reference-point" type="xs:string" />
+  <xs:element name="district" type="xs:string" />
+  <xs:element name="country" type="xs:string" />
+
+  <!-- Complex Elements -->
+  <xs:element name="index">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:choice minOccurs="1" maxOccurs="unbounded">
+	  <xs:element name="loc-item" type="loc-item" />
+	  <xs:element name="river-item" type="river-item" />
+	  <xs:element name="person-item" type="person-item" />
+	  <xs:element name="family-item" type="family-item" />
+	  <xs:element name="listing-item" type="listing-item" />
+	</xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="item">
+    <xs:attribute ref="itemid" use="required" />
+    <xs:attribute ref="itemtype" use="required" />
+    <xs:attribute ref="itemvalue" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="loc-item">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="loc-header" type="loc-header" />
+	  <xs:element name="loc-body" type="loc-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="loc-header">
+    <xs:sequence>
+      <xs:element name="placeName" type="placeName" />
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="placeName">
+    <xs:sequence>
+      <xs:element name="addNames" type="addNames" minOccurs="0"/>
+      <xs:element name="settlement" type="settlement" />
+      <xs:element name="reference-point" type="reference-point" minOccurs="0" />
+      <xs:element name="district" type="district" minOccurs="0" />
+      <xs:element name="region" type="region" minOccurs="0" />
+      <xs:element name="country" type="country" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addNames">
+    <xs:sequence>
+      <xs:element name="addName" type="addName" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settlement">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute ref="settlement-type" />
+	<xs:attribute ref="w" />
+	<xs:attribute ref="w-ref" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="region">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute ref="regiontype" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="mentionings">
+    <xs:sequence>
+      <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reg-ref">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute ref="regid" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="loc-body">
+    <!-- TODO -->
+  </xs:complexType>
+
+  <!-- TODO... -->
+
+</xs:schema>
