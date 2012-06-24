@@ -169,6 +169,17 @@
     <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
   </xs:complexType>
 
+  <xs:complexType name="listing-item">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="listing-header" type="listing-header" />
+	  <xs:element name="listing-body" type="listing-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <!-- TODO... -->
 
 </xs:schema>
