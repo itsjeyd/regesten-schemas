@@ -153,6 +153,7 @@
   <xs:complexType name="landmark-header">
     <xs:sequence>
       <xs:element name="geogName" type="geogName" />
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
