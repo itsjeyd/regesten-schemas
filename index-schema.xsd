@@ -139,6 +139,27 @@
     </xs:sequence>
   </complexType>
 
+  <xs:complexType name="landmark-item">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="landmark-header" type="landmark-header" />
+	  <xs:element name="landmark-body" type="landmark-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="landmark-header">
+    <xs:sequence>
+      <xs:element name="geogName" type="geogName" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="landmark-body">
+    <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
+  </xs:complexType>
+
   <!-- TODO... -->
 
 </xs:schema>
