@@ -116,8 +116,28 @@
   </xs:complexType>
 
   <xs:complexType name="loc-body">
-    <!-- TODO -->
+    <xs:sequence>
+      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="context">
+    <xs:attribute ref="context-type" use="required" /> <!-- TODO -->
+    <xs:sequence>
+      <xs:element name="subitem" type="subitem" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <complexType name="subitem">
+    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO -->
+    <xs:sequence>
+      <xs:choice>
+	<!-- TODO: person, event ... -->
+      </xs:choice>
+      <xs:element name="mentionings" type="mentionings" />
+      <xs:element name="context" type="context" minOccurs="0" />
+    </xs:sequence>
+  </complexType>
 
   <!-- TODO... -->
 
