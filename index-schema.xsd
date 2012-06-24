@@ -180,6 +180,28 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="family-item">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="family-header" type="family-header" />
+	  <xs:element name="family-body" type="family-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="person-item">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="person-header" type="person-header" />
+	  <xs:element name="person-body" type="person-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <!-- TODO... -->
 
 </xs:schema>
