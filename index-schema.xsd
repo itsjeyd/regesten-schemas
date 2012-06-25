@@ -219,6 +219,13 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <!-- TODO... -->
+  <xs:complexType name="person-header">
+    <xs:element name="person" type="person" />
+    <xs:element name="mentionings" type="mentionings" />
+  </xs:complexType>
+
+  <xs:complexType name="person-body">
+    <!-- Empty element: Entries of type person-item don't have a body -->
+  </xs:complexType>
 
 </xs:schema>
