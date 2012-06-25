@@ -191,6 +191,23 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="family-header">
+    <xs:sequence>
+      <!-- Introduce complex element "famName" to hold family name +
+           addNames? What about "siehe auch"?
+           -->
+      <xs:element name="addNames" type="addNames" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="family-body">
+    <xs:sequence>
+      <xs:element name="context" type="context" /> <!-- Do we need
+      this? -->
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="person-item">
     <xs:complexContent>
       <xs:extension base="item">
