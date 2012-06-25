@@ -180,6 +180,18 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:listing-header>
+    <xs:sequence>
+      <xs:element name="listing-type" type="xs:string" />
+      <!-- mentionings? -->
+    </xs:sequence>
+  </xs:listing-header>
+
+  <xs:listing-body>
+    <!-- Do we need "context" and "subitem" here? How about sth more
+	 generic like "listing-entry"? -->
+  </xs:listing-body>
+
   <xs:complexType name="family-item">
     <xs:complexContent>
       <xs:extension base="item">
