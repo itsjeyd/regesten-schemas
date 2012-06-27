@@ -249,14 +249,18 @@
   </xs:complexType>
 
   <xs:complexType name="person-header">
-    <xs:element name="person" type="person" />
-    <xs:element name="mentionings" type="mentionings" />
+    <xs:sequence>
+      <xs:element name="person" type="person" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="person-body">
     <!-- TODO: Entries of type person-item can have a body! -->
   </xs:complexType>
 
-  <!-- TODO: person -->
+  <!-- TODO: person, event (?) -->
+  <xs:complexType name="person">
+  </xs:complexType>
 
 </xs:schema>
