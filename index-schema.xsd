@@ -21,6 +21,18 @@
     </xs:simpleType>
   </xs:attribute>
 
+  <xs:attribute name="itemtype">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+	<xs:enumeration value="location" />
+	<xs:enumeration value="landmark" />
+	<xs:enumeration value="person" />
+	<xs:enumeration value="family" />
+	<xs:enumeration value="listing" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
   <!-- Simple Elements -->
   <xs:element name="addName" type="xs:string" />
   <xs:element name="reference-point" type="xs:string" />
