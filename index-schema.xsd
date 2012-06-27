@@ -137,6 +137,7 @@
   <xs:complexType name="context">
     <xs:attribute ref="contexttype" use="required" />
     <xs:sequence>
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
