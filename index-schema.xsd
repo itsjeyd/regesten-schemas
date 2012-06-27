@@ -47,6 +47,7 @@
   <xs:element name="surname" type="xs:string" />
   <xs:element name="maidenname" type="xs:string" />
   <xs:element name="genName" type="xs:string" />
+  <xs:element name="listing-type" type="xs:string" />
 
   <!-- Complex Elements -->
   <xs:element name="index">
@@ -207,7 +208,7 @@
 
   <xs:complexType name="listing-header">
     <xs:sequence>
-      <xs:element name="listing-type" type="xs:string" />
+      <xs:element ref="listing-type" />
       <!-- TODO: Do listings have mentionings in their headers? -->
     </xs:sequence>
   </xs:complexType>
