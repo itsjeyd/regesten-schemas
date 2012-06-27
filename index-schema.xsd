@@ -134,16 +134,14 @@
   </xs:complexType>
 
   <xs:complexType name="context">
-    <xs:attribute ref="contexttype" use="required" />
     <xs:sequence>
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
+    <xs:attribute ref="contexttype" use="required" />
   </xs:complexType>
 
   <complexType name="subitem">
-    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO: Do
-    we need this? Can we extract it reliably? -->
     <xs:sequence>
       <xs:choice>
 	<!-- TODO: person, event ... -->
@@ -151,6 +149,8 @@
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
+    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO: Do
+    we need this? Can we extract it reliably? -->
   </complexType>
 
   <xs:complexType name="landmark-item">
