@@ -197,17 +197,17 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:listing-header>
+  <xs:complexType name="listing-header">
     <xs:sequence>
       <xs:element name="listing-type" type="xs:string" />
       <!-- TODO: Do listings have mentionings in their headers? -->
     </xs:sequence>
-  </xs:listing-header>
+  </xs:complexType>
 
-  <xs:listing-body>
+  <xs:complexType name="listing-body">
     <!-- TODO: Do we need "context" and "subitem" here? How about sth
          more generic like "listing-entry"? -->
-  </xs:listing-body>
+  </xs:complexType>
 
   <xs:complexType name="family-item">
     <xs:complexContent>
