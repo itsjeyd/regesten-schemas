@@ -255,6 +255,41 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="persName" type="persName" />
+      <xs:element name="occupation" type="occupation" minOccurs="0" />
+      <!-- TODO: Can we extract this reliably? -->
+      <xs:element ref="person-info" minOccurs="0" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+    <xs:attribute ref="persid" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="persName" mixed="true">
+    <xs:all>
+      <xs:element ref="forename" minOccurs="0" />
+      <xs:element ref="surname" minOccurs="0" />
+      <xs:element ref="maidenname" minOccurs="0" />
+      <xs:element ref="genName" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="occupation" mixed="true">
+    <xs:sequence>
+      <xs:element name="floruit" type="floruit" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="floruit">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute ref="notBefore" />
+	<xs:attribute ref="notAfter" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:complexType name="person-body">
     <xs:sequence>
       <xs:element name="context" type="context" minOccurs="0" />
@@ -262,7 +297,5 @@
   </xs:complexType>
 
   <!-- TODO: person, event (?) -->
-  <xs:complexType name="person">
-  </xs:complexType>
 
 </xs:schema>
