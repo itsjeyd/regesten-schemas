@@ -6,8 +6,8 @@
   <xs:attribute name="itemtype" type="xs:string" />
   <xs:attribute name="itemvalue" type="xs:string" />
   <xs:attribute name="regid" type="xs:integer" />
-  <xs:attribute name="settlement-type" type="xs:string" use="required" />
-  <xs:attribute name="w" type="xs:boolean" use="required" />
+  <xs:attribute name="settlement-type" type="xs:string" />
+  <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
   <xs:attribute name="contexttype" type="xs:string" />
 
@@ -99,8 +99,8 @@
   <xs:complexType name="settlement">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="settlement-type" />
-	<xs:attribute ref="w" />
+	<xs:attribute ref="settlement-type" use="required" />
+	<xs:attribute ref="w" use="required" />
 	<xs:attribute ref="w-ref" />
       </xs:extension>
     </xs:simpleContent>
