@@ -83,16 +83,16 @@
     <xs:sequence>
       <xs:element name="addNames" type="addNames" minOccurs="0"/>
       <xs:element name="settlement" type="settlement" />
-      <xs:element name="reference-point" type="reference-point" minOccurs="0" />
-      <xs:element name="district" type="district" minOccurs="0" />
+      <xs:element ref="reference-point" minOccurs="0" />
+      <xs:element ref="district" minOccurs="0" />
       <xs:element name="region" type="region" minOccurs="0" />
-      <xs:element name="country" type="country" minOccurs="0" />
+      <xs:element ref="country" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="addNames">
     <xs:sequence>
-      <xs:element name="addName" type="addName" maxOccurs="unbounded" />
+      <xs:element ref="addName" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
