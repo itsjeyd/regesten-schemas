@@ -142,7 +142,7 @@
     <xs:attribute ref="contexttype" use="required" />
   </xs:complexType>
 
-  <complexType name="subitem">
+  <xs:complexType name="subitem">
     <xs:sequence>
       <xs:choice>
 	<!-- TODO: person, event ... -->
@@ -152,7 +152,7 @@
     </xs:sequence>
     <xs:attribute ref="subitem-type" use="required" /> <!-- TODO: Do
     we need this? Can we extract it reliably? -->
-  </complexType>
+  </xs:complexType>
 
   <xs:complexType name="landmark-item">
     <xs:complexContent>
