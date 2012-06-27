@@ -39,6 +39,11 @@
   <xs:element name="reference-point" type="xs:string" />
   <xs:element name="district" type="xs:string" />
   <xs:element name="country" type="xs:string" />
+  <xs:element name="person-info" type="xs:string" />
+  <xs:element name="forename" type="xs:string" />
+  <xs:element name="surname" type="xs:string" />
+  <xs:element name="maidenname" type="xs:string" />
+  <xs:element name="genName" type="xs:string" />
 
   <!-- Complex Elements -->
   <xs:element name="index">
