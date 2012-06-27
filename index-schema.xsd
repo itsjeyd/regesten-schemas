@@ -9,6 +9,7 @@
   <xs:attribute name="settlement-type" type="xs:string" use="required" />
   <xs:attribute name="w" type="xs:boolean" use="required" />
   <xs:attribute name="w-ref" type="xs:string" />
+  <xs:attribute name="contexttype" type="xs:string" />
 
   <!-- Complex Attributes -->
   <xs:attribute name="regiontype">
@@ -134,7 +135,7 @@
   </xs:complexType>
 
   <xs:complexType name="context">
-    <xs:attribute ref="context-type" use="required" /> <!-- TODO -->
+    <xs:attribute ref="contexttype" use="required" />
     <xs:sequence>
       <xs:element name="subitem" type="subitem" maxOccurs="unbounded" />
     </xs:sequence>
