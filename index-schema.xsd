@@ -143,7 +143,8 @@
   </xs:complexType>
 
   <complexType name="subitem">
-    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO -->
+    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO: Do
+    we need this? Can we extract it reliably? -->
     <xs:sequence>
       <xs:choice>
 	<!-- TODO: person, event ... -->
@@ -175,7 +176,7 @@
     <xs:sequence>
       <xs:element name="name" type="xs:string" />
       <xs:element name="addNames" type="addNames" />
-      <!-- geogFeat? -->
+      <!-- TODO: geogFeat? -->
     </xs:sequence>
   </xs:complexType>
 
@@ -197,13 +198,13 @@
   <xs:listing-header>
     <xs:sequence>
       <xs:element name="listing-type" type="xs:string" />
-      <!-- mentionings? -->
+      <!-- TODO: Do listings have mentionings in their headers? -->
     </xs:sequence>
   </xs:listing-header>
 
   <xs:listing-body>
-    <!-- Do we need "context" and "subitem" here? How about sth more
-	 generic like "listing-entry"? -->
+    <!-- TODO: Do we need "context" and "subitem" here? How about sth
+         more generic like "listing-entry"? -->
   </xs:listing-body>
 
   <xs:complexType name="family-item">
@@ -229,7 +230,7 @@
 
   <xs:complexType name="family-body">
     <xs:sequence>
-      <xs:element name="context" type="context" /> <!-- Do we need
+      <xs:element name="context" type="context" /> <!-- TODO: Do we need
       this? -->
     </xs:sequence>
   </xs:complexType>
@@ -251,7 +252,9 @@
   </xs:complexType>
 
   <xs:complexType name="person-body">
-    <!-- Empty element: Entries of type person-item don't have a body -->
+    <!-- TODO: Entries of type person-item can have a body! -->
   </xs:complexType>
+
+  <!-- TODO: person -->
 
 </xs:schema>
