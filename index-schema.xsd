@@ -9,6 +9,7 @@
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
   <xs:attribute name="contexttype" type="xs:string" />
+  <xs:attribute name="subitem-type" type="xs:string" />
 
   <!-- Complex Attributes -->
   <xs:attribute name="regiontype">
