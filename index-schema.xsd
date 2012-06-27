@@ -3,7 +3,6 @@
 
   <!-- Simple Attributes -->
   <xs:attribute name="itemid" type="xs:integer" />
-  <xs:attribute name="itemtype" type="xs:string" />
   <xs:attribute name="itemvalue" type="xs:string" />
   <xs:attribute name="regid" type="xs:integer" />
   <xs:attribute name="settlement-type" type="xs:string" />
