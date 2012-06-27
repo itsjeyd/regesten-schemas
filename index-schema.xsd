@@ -256,7 +256,9 @@
   </xs:complexType>
 
   <xs:complexType name="person-body">
-    <!-- TODO: Entries of type person-item can have a body! -->
+    <xs:sequence>
+      <xs:element name="context" type="context" minOccurs="0" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- TODO: person, event (?) -->
