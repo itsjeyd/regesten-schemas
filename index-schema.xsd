@@ -208,7 +208,7 @@
   <xs:complexType name="listing-header">
     <xs:sequence>
       <xs:element ref="listing-type" />
-      <!-- TODO: Do listings have mentionings in their headers? -->
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
