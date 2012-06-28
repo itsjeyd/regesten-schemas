@@ -185,7 +185,6 @@
     <xs:sequence>
       <xs:element name="name" type="xs:string" />
       <xs:element name="addNames" type="addNames" />
-      <!-- TODO: geogFeat? -->
     </xs:sequence>
   </xs:complexType>
 
