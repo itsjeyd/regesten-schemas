@@ -209,6 +209,7 @@
 
   <xs:complexType name="context">
     <xs:sequence>
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
