@@ -34,15 +34,14 @@
   </xs:attribute>
 
   <!-- Simple Elements -->
+  <xs:simpleType name="name">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
   <xs:element name="addName" type="xs:string" />
   <xs:element name="reference-point" type="xs:string" />
   <xs:element name="district" type="xs:string" />
   <xs:element name="country" type="xs:string" />
   <xs:element name="person-info" type="xs:string" />
-  <xs:element name="forename" type="xs:string" />
-  <xs:element name="surname" type="xs:string" />
-  <xs:element name="maidenname" type="xs:string" />
-  <xs:element name="genName" type="xs:string" />
   <xs:element name="listing-type" type="xs:string" />
 
   <!-- Complex Elements -->
@@ -278,10 +277,10 @@
 
   <xs:complexType name="persName" mixed="true">
     <xs:all>
-      <xs:element ref="forename" minOccurs="0" />
-      <xs:element ref="surname" minOccurs="0" />
-      <xs:element ref="maidenname" minOccurs="0" />
-      <xs:element ref="genName" minOccurs="0" />
+      <xs:element name="forename" type="name" minOccurs="0" />
+      <xs:element name="surname" type="name" minOccurs="0" />
+      <xs:element name="maidenname" type="name" minOccurs="0" />
+      <xs:element name="genName" type="name" minOccurs="0" />
     </xs:all>
   </xs:complexType>
 
