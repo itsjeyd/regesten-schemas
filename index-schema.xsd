@@ -4,27 +4,23 @@
   <!-- Simple Attributes -->
 
   <!-- Complex Attributes -->
-  <xs:attribute name="regiontype">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-	<xs:enumeration value="Bundesland" />
-	<xs:enumeration value="Departement" />
-	<xs:enumeration value="Provinz" />
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:attribute>
+  <xs:simpleType name="regiontype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Bundesland" />
+      <xs:enumeration value="Departement" />
+      <xs:enumeration value="Provinz" />
+    </xs:restriction>
+  </xs:simpleType>
 
-  <xs:attribute name="itemtype">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-	<xs:enumeration value="location" />
-	<xs:enumeration value="landmark" />
-	<xs:enumeration value="person" />
-	<xs:enumeration value="family" />
-	<xs:enumeration value="persongroup" />
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:attribute>
+  <xs:simpleType name="itemtype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="location" />
+      <xs:enumeration value="landmark" />
+      <xs:enumeration value="person" />
+      <xs:enumeration value="family" />
+      <xs:enumeration value="persongroup" />
+    </xs:restriction>
+  </xs:simpleType>
 
   <!-- Simple Elements -->
   <xs:simpleType name="idtype">
@@ -60,7 +56,7 @@
 
   <xs:complexType name="item">
     <xs:attribute name="id" type="idtype" use="required" />
-    <xs:attribute ref="itemtype" use="required" />
+    <xs:attribute name="type" type="itemtype" use="required" />
     <xs:attribute name="value" type="stringtype" use="required" />
   </xs:complexType>
 
@@ -112,7 +108,7 @@
   <xs:complexType name="region">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="regiontype" use="required" />
+	<xs:attribute name="type" type="regiontype" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
