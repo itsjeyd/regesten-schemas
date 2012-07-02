@@ -140,7 +140,7 @@
   <xs:complexType name="family-header">
     <xs:sequence>
       <!-- TODO: What about "siehe auch"? -->
-      <xs:element name="famName" type="famName" />
+      <xs:element name="family-name" type="family-name" />
       <xs:element name="mentionings" type="mentionings" />
     </xs:sequence>
   </xs:complexType>
@@ -190,7 +190,7 @@
     <xs:attribute name="id" type="idtype" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="famName">
+  <xs:complexType name="family-name">
     <xs:sequence>
       <xs:element name="name" type="name" />
       <xs:element name="addNames" type="addNames" />
