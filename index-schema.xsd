@@ -2,15 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!-- Simple Attributes -->
-  <xs:attribute name="itemid" type="xs:integer" />
+  <xs:attribute name="id" type="xs:ID" />
   <xs:attribute name="itemvalue" type="xs:string" />
-  <xs:attribute name="regid" type="xs:string" />
   <xs:attribute name="settlement-type" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
   <xs:attribute name="contexttype" type="xs:string" />
   <xs:attribute name="subitem-type" type="xs:string" />
-  <xs:attribute name="persid" type="xs:string" />
   <xs:attribute name="notBefore" type="xs:gYear" />
   <xs:attribute name="notAfter" type="xs:gYear" />
 
@@ -65,7 +63,7 @@
   </xs:element>
 
   <xs:complexType name="item">
-    <xs:attribute ref="itemid" use="required" />
+    <xs:attribute ref="id" use="required" />
     <xs:attribute ref="itemtype" use="required" />
     <xs:attribute ref="itemvalue" use="required" />
   </xs:complexType>
@@ -132,7 +130,7 @@
   <xs:complexType name="reg-ref">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="regid" use="required" />
+	<xs:attribute ref="id" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -270,7 +268,7 @@
       <xs:element ref="person-info" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
     </xs:sequence>
-    <xs:attribute ref="persid" use="required" />
+    <xs:attribute ref="id" use="required" />
   </xs:complexType>
 
   <xs:complexType name="persName" mixed="true">
