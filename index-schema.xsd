@@ -56,7 +56,7 @@
 	  <xs:element name="landmark-item" type="landmark-item" />
 	  <xs:element name="person-item" type="person-item" />
 	  <xs:element name="family-item" type="family-item" />
-	  <xs:element name="listing-item" type="listing-item" />
+	  <xs:element name="persongroup" type="persongroup" />
 	</xs:choice>
       </xs:sequence>
     </xs:complexType>
@@ -191,7 +191,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="listing-item">
+  <xs:complexType name="persongroup">
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
