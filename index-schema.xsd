@@ -159,8 +159,7 @@
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute ref="subitem-type" use="required" /> <!-- TODO: Do
-    we need this? Can we extract it reliably? -->
+    <xs:attribute ref="subitem-type" use="required" />
   </xs:complexType>
 
   <xs:complexType name="landmark-item">
