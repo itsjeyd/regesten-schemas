@@ -229,6 +229,7 @@
 	<xs:element name="person" type="person" />
 	<!-- TODO: event ... -->
       </xs:choice>
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
