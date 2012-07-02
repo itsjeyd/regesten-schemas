@@ -81,7 +81,7 @@
 
   <xs:complexType name="placeName">
     <xs:sequence>
-      <xs:element name="addNames" type="addNames" minOccurs="0"/>
+      <xs:element name="addNames" type="addNames" minOccurs="0" />
       <xs:element name="settlement" type="settlement" />
       <xs:element name="reference-point" type="stringtype" minOccurs="0" />
       <xs:element name="district" type="stringtype" minOccurs="0" />
@@ -116,7 +116,7 @@
 
   <xs:complexType name="mentionings">
     <xs:sequence>
-      <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded"/>
+      <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
