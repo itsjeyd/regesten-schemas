@@ -47,7 +47,7 @@
 	<xs:choice minOccurs="1" maxOccurs="unbounded">
 	  <xs:element name="location" type="location" />
 	  <xs:element name="landmark" type="landmark" />
-	  <xs:element name="person-item" type="person-item" />
+	  <xs:element name="individual" type="individual" />
 	  <xs:element name="family" type="family" />
 	  <xs:element name="persongroup" type="persongroup" />
 	</xs:choice>
@@ -236,7 +236,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="person-item">
+  <xs:complexType name="individual">
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
