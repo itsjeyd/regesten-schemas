@@ -66,7 +66,7 @@
       <xs:extension base="item">
 	<xs:sequence>
 	  <xs:element name="location-header" type="location-header" />
-	  <xs:element name="loc-body" type="item-body" />
+	  <xs:element name="location-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
