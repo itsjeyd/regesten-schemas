@@ -32,14 +32,13 @@
   </xs:attribute>
 
   <!-- Simple Elements -->
-  <xs:simpleType name="name">
+  <xs:simpleType name="stringtype">
     <xs:restriction base="xs:string" />
   </xs:simpleType>
-  <xs:element name="reference-point" type="xs:string" />
-  <xs:element name="district" type="xs:string" />
-  <xs:element name="country" type="xs:string" />
-  <xs:element name="person-info" type="xs:string" />
-  <xs:element name="group-name" type="xs:string" />
+
+  <xs:simpleType name="name">
+    <xs:restriction base="stringtype" />
+  </xs:simpleType>
 
   <!-- Complex Elements -->
   <xs:element name="index">
@@ -84,10 +83,10 @@
     <xs:sequence>
       <xs:element name="addNames" type="addNames" minOccurs="0"/>
       <xs:element name="settlement" type="settlement" />
-      <xs:element ref="reference-point" minOccurs="0" />
-      <xs:element ref="district" minOccurs="0" />
+      <xs:element name="reference-point" type="stringtype" minOccurs="0" />
+      <xs:element name="district" type="stringtype" minOccurs="0" />
       <xs:element name="region" type="region" minOccurs="0" />
-      <xs:element ref="country" minOccurs="0" />
+      <xs:element name="country" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
@@ -192,7 +191,7 @@
 
   <xs:complexType name="persongroup-header">
     <xs:sequence>
-      <xs:element ref="group-name" />
+      <xs:element name="group-name" type="stringtype" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -257,7 +256,7 @@
   <xs:complexType name="person">
     <xs:sequence>
       <xs:element name="persName" type="persName" />
-      <xs:element ref="person-info" minOccurs="0" />
+      <xs:element name="person-info" type="stringtype" minOccurs="0" />
     </xs:sequence>
     <xs:attribute ref="id" use="required" />
   </xs:complexType>
