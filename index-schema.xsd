@@ -4,23 +4,6 @@
   <!-- Simple Attributes -->
 
   <!-- Complex Attributes -->
-  <xs:simpleType name="regiontype">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Bundesland" />
-      <xs:enumeration value="Departement" />
-      <xs:enumeration value="Provinz" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="itemtype">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="location" />
-      <xs:enumeration value="landmark" />
-      <xs:enumeration value="person" />
-      <xs:enumeration value="family" />
-      <xs:enumeration value="persongroup" />
-    </xs:restriction>
-  </xs:simpleType>
 
   <!-- Simple Elements -->
   <xs:simpleType name="idtype">
@@ -37,6 +20,24 @@
 
   <xs:simpleType name="name">
     <xs:restriction base="stringtype" />
+  </xs:simpleType>
+
+  <xs:simpleType name="itemtype">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="location" />
+      <xs:enumeration value="landmark" />
+      <xs:enumeration value="person" />
+      <xs:enumeration value="family" />
+      <xs:enumeration value="persongroup" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="regiontype">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="Bundesland" />
+      <xs:enumeration value="Departement" />
+      <xs:enumeration value="Provinz" />
+    </xs:restriction>
   </xs:simpleType>
 
   <!-- Complex Elements -->
