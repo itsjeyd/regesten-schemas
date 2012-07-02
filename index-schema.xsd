@@ -3,11 +3,10 @@
 
   <!-- Simple Attributes -->
   <xs:attribute name="id" type="xs:ID" />
+  <xs:attribute name="type" type="xs:string" />
   <xs:attribute name="itemvalue" type="xs:string" />
-  <xs:attribute name="settlement-type" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
-  <xs:attribute name="contexttype" type="xs:string" />
   <xs:attribute name="subitem-type" type="xs:string" />
   <xs:attribute name="notBefore" type="xs:gYear" />
   <xs:attribute name="notAfter" type="xs:gYear" />
@@ -106,7 +105,7 @@
   <xs:complexType name="settlement">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="settlement-type" use="required" />
+	<xs:attribute ref="type" use="required" />
 	<xs:attribute ref="w" use="required" />
 	<xs:attribute ref="w-ref" />
       </xs:extension>
@@ -146,7 +145,7 @@
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute ref="contexttype" use="required" />
+    <xs:attribute ref="type" use="required" />
   </xs:complexType>
 
   <xs:complexType name="subitem">
