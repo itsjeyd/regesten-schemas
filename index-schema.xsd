@@ -225,11 +225,16 @@
 
   <xs:complexType name="family-header">
     <xs:sequence>
-      <!-- TODO: Introduce complex element "famName" to hold family
-           name + addNames? What about "siehe auch"?
-           -->
-      <xs:element name="addNames" type="addNames" />
+      <!-- TODO: What about "siehe auch"? -->
+      <xs:element name="famName" type="famName" />
       <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="famName">
+    <xs:sequence>
+      <xs:element name="name" type="name" />
+      <xs:element name="addNames" type="addNames" />
     </xs:sequence>
   </xs:complexType>
 
