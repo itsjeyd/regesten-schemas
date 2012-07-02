@@ -2,8 +2,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!-- Simple Attributes -->
-  <xs:attribute name="id" type="xs:ID" />
-  <xs:attribute name="w" type="xs:boolean" />
 
   <!-- Complex Attributes -->
   <xs:attribute name="regiontype">
@@ -29,6 +27,14 @@
   </xs:attribute>
 
   <!-- Simple Elements -->
+  <xs:simpleType name="idtype">
+    <xs:restriction base="xs:ID" />
+  </xs:simpleType>
+
+  <xs:simpleType name="booleantype">
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+
   <xs:simpleType name="stringtype">
     <xs:restriction base="xs:string" />
   </xs:simpleType>
@@ -53,7 +59,7 @@
   </xs:element>
 
   <xs:complexType name="item">
-    <xs:attribute ref="id" use="required" />
+    <xs:attribute name="id" type="idtype" use="required" />
     <xs:attribute ref="itemtype" use="required" />
     <xs:attribute name="value" type="stringtype" use="required" />
   </xs:complexType>
@@ -97,7 +103,7 @@
     <xs:simpleContent>
       <xs:extension base="xs:string">
 	<xs:attribute name="type" type="stringtype" use="required" />
-	<xs:attribute ref="w" use="required" />
+	<xs:attribute name="w" type="booleantype" use="required" />
 	<xs:attribute name="w-ref" type="stringtype" />
       </xs:extension>
     </xs:simpleContent>
@@ -120,7 +126,7 @@
   <xs:complexType name="reg-ref">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="id" use="required" />
+	<xs:attribute name="id" type="idtype" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -255,7 +261,7 @@
       <xs:element name="persName" type="persName" />
       <xs:element name="person-info" type="stringtype" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute ref="id" use="required" />
+    <xs:attribute name="id" type="idtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="persName" mixed="true">
