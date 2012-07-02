@@ -41,7 +41,7 @@
   <xs:element name="district" type="xs:string" />
   <xs:element name="country" type="xs:string" />
   <xs:element name="person-info" type="xs:string" />
-  <xs:element name="listing-type" type="xs:string" />
+  <xs:element name="group-name" type="xs:string" />
 
   <!-- Complex Elements -->
   <xs:element name="index">
@@ -194,7 +194,7 @@
 
   <xs:complexType name="persongroup-header">
     <xs:sequence>
-      <xs:element ref="listing-type" />
+      <xs:element ref="group-name" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
