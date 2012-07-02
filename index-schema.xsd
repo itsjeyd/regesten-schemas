@@ -145,7 +145,8 @@
   <xs:complexType name="subitem">
     <xs:sequence>
       <xs:choice>
-	<!-- TODO: person, event ... -->
+	<xs:element name="person" type="person" />
+	<!-- TODO: event ... -->
       </xs:choice>
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
