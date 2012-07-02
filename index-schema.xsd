@@ -55,7 +55,7 @@
 	  <xs:element name="location" type="location" />
 	  <xs:element name="landmark" type="landmark" />
 	  <xs:element name="person-item" type="person-item" />
-	  <xs:element name="family-item" type="family-item" />
+	  <xs:element name="family" type="family" />
 	  <xs:element name="persongroup" type="persongroup" />
 	</xs:choice>
       </xs:sequence>
@@ -222,7 +222,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="family-item">
+  <xs:complexType name="family">
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
