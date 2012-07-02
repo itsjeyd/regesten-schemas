@@ -87,7 +87,7 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="item-header" type="person-header" />
+	  <xs:element name="item-header" type="individual-header" />
 	  <xs:element name="item-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
@@ -130,7 +130,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="person-header">
+  <xs:complexType name="individual-header">
     <xs:sequence>
       <xs:element name="person" type="person" />
       <xs:element name="mentionings" type="mentionings" />
