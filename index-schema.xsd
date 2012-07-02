@@ -65,14 +65,14 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="loc-header" type="loc-header" />
+	  <xs:element name="location-header" type="location-header" />
 	  <xs:element name="loc-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="loc-header">
+  <xs:complexType name="location-header">
     <xs:sequence>
       <xs:element name="placeName" type="placeName" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
