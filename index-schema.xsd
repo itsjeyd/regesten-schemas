@@ -3,10 +3,7 @@
 
   <!-- Simple Attributes -->
   <xs:attribute name="id" type="xs:ID" />
-  <xs:attribute name="type" type="xs:string" />
-  <xs:attribute name="value" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
-  <xs:attribute name="w-ref" type="xs:string" />
 
   <!-- Complex Attributes -->
   <xs:attribute name="regiontype">
@@ -58,7 +55,7 @@
   <xs:complexType name="item">
     <xs:attribute ref="id" use="required" />
     <xs:attribute ref="itemtype" use="required" />
-    <xs:attribute ref="value" use="required" />
+    <xs:attribute name="value" type="stringtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="location">
@@ -99,9 +96,9 @@
   <xs:complexType name="settlement">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-	<xs:attribute ref="type" use="required" />
+	<xs:attribute name="type" type="stringtype" use="required" />
 	<xs:attribute ref="w" use="required" />
-	<xs:attribute ref="w-ref" />
+	<xs:attribute name="w-ref" type="stringtype" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -139,7 +136,7 @@
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute ref="type" use="required" />
+    <xs:attribute name="type" type="stringtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="subitem">
@@ -150,7 +147,7 @@
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute ref="type" use="required" />
+    <xs:attribute name="type" type="stringtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="landmark">
