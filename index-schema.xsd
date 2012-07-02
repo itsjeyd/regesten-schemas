@@ -176,7 +176,7 @@
 
   <xs:complexType name="geogName">
     <xs:sequence>
-      <xs:element name="name" type="xs:string" />
+      <xs:element name="name" type="name" />
       <xs:element name="addNames" type="addNames" />
     </xs:sequence>
   </xs:complexType>
