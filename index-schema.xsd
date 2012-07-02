@@ -28,7 +28,7 @@
 	<xs:enumeration value="landmark" />
 	<xs:enumeration value="person" />
 	<xs:enumeration value="family" />
-	<xs:enumeration value="listing" />
+	<xs:enumeration value="persongroup" />
       </xs:restriction>
     </xs:simpleType>
   </xs:attribute>
@@ -191,21 +191,21 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="listing-header" type="listing-header" />
-	  <xs:element name="listing-body" type="listing-body" />
+	  <xs:element name="persongroup-header" type="persongroup-header" />
+	  <xs:element name="persongroup-body" type="persongroup-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="listing-header">
+  <xs:complexType name="persongroup-header">
     <xs:sequence>
       <xs:element ref="listing-type" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="listing-body">
+  <xs:complexType name="persongroup-body">
     <xs:sequence>
       <xs:element name="member" type="member" maxOccurs="unbounded" />
     </xs:sequence>
