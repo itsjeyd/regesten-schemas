@@ -262,7 +262,6 @@
       <xs:element name="occupation" type="occupation" minOccurs="0" />
       <!-- TODO: Can we extract this reliably? -->
       <xs:element ref="person-info" minOccurs="0" />
-      <xs:element name="mentionings" type="mentionings" />
     </xs:sequence>
     <xs:attribute ref="id" use="required" />
   </xs:complexType>
