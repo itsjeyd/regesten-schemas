@@ -65,8 +65,8 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="location-header" type="location-header" />
-	  <xs:element name="location-body" type="item-body" />
+	  <xs:element name="item-header" type="location-header" />
+	  <xs:element name="item-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -76,8 +76,8 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="landmark-header" type="landmark-header" />
-	  <xs:element name="landmark-body" type="item-body" />
+	  <xs:element name="item-header" type="landmark-header" />
+	  <xs:element name="item-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -87,8 +87,8 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="person-header" type="person-header" />
-	  <xs:element name="person-body" type="item-body" />
+	  <xs:element name="item-header" type="person-header" />
+	  <xs:element name="item-body" type="item-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -98,8 +98,8 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="family-header" type="family-header" />
-	  <xs:element name="family-body" type="listing-body" />
+	  <xs:element name="item-header" type="family-header" />
+	  <xs:element name="item-body" type="listing-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -109,8 +109,8 @@
     <xs:complexContent>
       <xs:extension base="item">
 	<xs:sequence>
-	  <xs:element name="persongroup-header" type="persongroup-header" />
-	  <xs:element name="persongroup-body" type="listing-body" />
+	  <xs:element name="item-header" type="persongroup-header" />
+	  <xs:element name="item-body" type="listing-body" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
