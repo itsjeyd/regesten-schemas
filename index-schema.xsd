@@ -98,7 +98,7 @@
 
   <xs:complexType name="settlement">
     <xs:simpleContent>
-      <xs:extension base="xs:string">
+      <xs:extension base="stringtype">
 	<xs:attribute name="type" type="stringtype" use="required" />
 	<xs:attribute name="w" type="booleantype" use="required" />
 	<xs:attribute name="w-ref" type="stringtype" />
@@ -108,7 +108,7 @@
 
   <xs:complexType name="region">
     <xs:simpleContent>
-      <xs:extension base="xs:string">
+      <xs:extension base="stringtype">
 	<xs:attribute name="type" type="regiontype" use="required" />
       </xs:extension>
     </xs:simpleContent>
@@ -122,7 +122,7 @@
 
   <xs:complexType name="reg-ref">
     <xs:simpleContent>
-      <xs:extension base="xs:string">
+      <xs:extension base="stringtype">
 	<xs:attribute name="id" type="idtype" use="required" />
       </xs:extension>
     </xs:simpleContent>
