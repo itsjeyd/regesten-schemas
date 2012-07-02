@@ -120,6 +120,7 @@
     <xs:sequence>
       <xs:element name="placeName" type="placeName" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
@@ -127,6 +128,7 @@
     <xs:sequence>
       <xs:element name="geogName" type="geogName" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
@@ -134,6 +136,7 @@
     <xs:sequence>
       <xs:element name="person" type="person" />
       <xs:element name="mentionings" type="mentionings" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
@@ -142,6 +145,7 @@
       <!-- TODO: What about "siehe auch"? -->
       <xs:element name="family-name" type="family-name" />
       <xs:element name="mentionings" type="mentionings" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
@@ -149,6 +153,7 @@
     <xs:sequence>
       <xs:element name="group-name" type="stringtype" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
