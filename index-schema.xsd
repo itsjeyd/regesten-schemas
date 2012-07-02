@@ -7,8 +7,6 @@
   <xs:attribute name="value" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
-  <xs:attribute name="notBefore" type="xs:gYear" />
-  <xs:attribute name="notAfter" type="xs:gYear" />
 
   <!-- Complex Attributes -->
   <xs:attribute name="regiontype">
