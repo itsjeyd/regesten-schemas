@@ -219,6 +219,7 @@
   <xs:complexType name="member">
     <xs:sequence>
       <xs:element name="person" type="person" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
     </xs:sequence>
   </xs:complexType>
