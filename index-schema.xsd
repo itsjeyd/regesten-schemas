@@ -7,7 +7,6 @@
   <xs:attribute name="value" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
-  <xs:attribute name="subitem-type" type="xs:string" />
   <xs:attribute name="notBefore" type="xs:gYear" />
   <xs:attribute name="notAfter" type="xs:gYear" />
 
@@ -156,7 +155,7 @@
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute ref="subitem-type" use="required" />
+    <xs:attribute ref="type" use="required" />
   </xs:complexType>
 
   <xs:complexType name="landmark">
