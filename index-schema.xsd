@@ -4,7 +4,7 @@
   <!-- Simple Attributes -->
   <xs:attribute name="id" type="xs:ID" />
   <xs:attribute name="type" type="xs:string" />
-  <xs:attribute name="itemvalue" type="xs:string" />
+  <xs:attribute name="value" type="xs:string" />
   <xs:attribute name="w" type="xs:boolean" />
   <xs:attribute name="w-ref" type="xs:string" />
   <xs:attribute name="subitem-type" type="xs:string" />
@@ -64,7 +64,7 @@
   <xs:complexType name="item">
     <xs:attribute ref="id" use="required" />
     <xs:attribute ref="itemtype" use="required" />
-    <xs:attribute ref="itemvalue" use="required" />
+    <xs:attribute ref="value" use="required" />
   </xs:complexType>
 
   <xs:complexType name="location">
