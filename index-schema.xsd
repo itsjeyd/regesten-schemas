@@ -72,10 +72,95 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="landmark">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="landmark-header" type="landmark-header" />
+	  <xs:element name="landmark-body" type="item-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="individual">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="person-header" type="person-header" />
+	  <xs:element name="person-body" type="item-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="family">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="family-header" type="family-header" />
+	  <xs:element name="family-body" type="listing-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="persongroup">
+    <xs:complexContent>
+      <xs:extension base="item">
+	<xs:sequence>
+	  <xs:element name="persongroup-header" type="persongroup-header" />
+	  <xs:element name="persongroup-body" type="listing-body" />
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="location-header">
     <xs:sequence>
       <xs:element name="placeName" type="placeName" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="landmark-header">
+    <xs:sequence>
+      <xs:element name="geogName" type="geogName" />
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person-header">
+    <xs:sequence>
+      <xs:element name="person" type="person" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="family-header">
+    <xs:sequence>
+      <!-- TODO: What about "siehe auch"? -->
+      <xs:element name="famName" type="famName" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="persongroup-header">
+    <xs:sequence>
+      <xs:element name="group-name" type="stringtype" />
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="item-body">
+    <xs:sequence>
+      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listing-body">
+    <xs:sequence>
+      <xs:element name="member" type="member" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -88,6 +173,61 @@
       <xs:element name="region" type="region" minOccurs="0" />
       <xs:element name="country" type="stringtype" minOccurs="0" />
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="geogName">
+    <xs:sequence>
+      <xs:element name="name" type="name" />
+      <xs:element name="addNames" type="addNames" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="persName" type="persName" />
+      <xs:element name="person-info" type="stringtype" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="idtype" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="famName">
+    <xs:sequence>
+      <xs:element name="name" type="name" />
+      <xs:element name="addNames" type="addNames" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mentionings">
+    <xs:sequence>
+      <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="context">
+    <xs:sequence>
+      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="type" type="stringtype" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="member">
+    <xs:sequence>
+      <xs:element name="person" type="person" />
+      <xs:element name="mentionings" type="mentionings" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="subitem">
+    <xs:sequence>
+      <xs:choice>
+	<xs:element name="person" type="person" />
+	<!-- TODO: event ... -->
+      </xs:choice>
+      <xs:element name="mentionings" type="mentionings" />
+      <xs:element name="context" type="context" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="type" type="stringtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="addNames">
@@ -114,10 +254,13 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="mentionings">
-    <xs:sequence>
-      <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded" />
-    </xs:sequence>
+  <xs:complexType name="persName" mixed="true">
+    <xs:all>
+      <xs:element name="forename" type="name" minOccurs="0" />
+      <xs:element name="surname" type="name" minOccurs="0" />
+      <xs:element name="maidenname" type="name" minOccurs="0" />
+      <xs:element name="genName" type="name" minOccurs="0" />
+    </xs:all>
   </xs:complexType>
 
   <xs:complexType name="reg-ref">
@@ -126,149 +269,6 @@
 	<xs:attribute name="id" type="idtype" use="required" />
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:complexType name="item-body">
-    <xs:sequence>
-      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="context">
-    <xs:sequence>
-      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
-      <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-    <xs:attribute name="type" type="stringtype" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="subitem">
-    <xs:sequence>
-      <xs:choice>
-	<xs:element name="person" type="person" />
-	<!-- TODO: event ... -->
-      </xs:choice>
-      <xs:element name="mentionings" type="mentionings" />
-      <xs:element name="context" type="context" minOccurs="0" />
-    </xs:sequence>
-    <xs:attribute name="type" type="stringtype" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="landmark">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="landmark-header" type="landmark-header" />
-	  <xs:element name="landmark-body" type="item-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="landmark-header">
-    <xs:sequence>
-      <xs:element name="geogName" type="geogName" />
-      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="geogName">
-    <xs:sequence>
-      <xs:element name="name" type="name" />
-      <xs:element name="addNames" type="addNames" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="persongroup">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="persongroup-header" type="persongroup-header" />
-	  <xs:element name="persongroup-body" type="listing-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="persongroup-header">
-    <xs:sequence>
-      <xs:element name="group-name" type="stringtype" />
-      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="listing-body">
-    <xs:sequence>
-      <xs:element name="member" type="member" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="member">
-    <xs:sequence>
-      <xs:element name="person" type="person" />
-      <xs:element name="mentionings" type="mentionings" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="family">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="family-header" type="family-header" />
-	  <xs:element name="family-body" type="listing-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="family-header">
-    <xs:sequence>
-      <!-- TODO: What about "siehe auch"? -->
-      <xs:element name="famName" type="famName" />
-      <xs:element name="mentionings" type="mentionings" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="famName">
-    <xs:sequence>
-      <xs:element name="name" type="name" />
-      <xs:element name="addNames" type="addNames" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="individual">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="person-header" type="person-header" />
-	  <xs:element name="person-body" type="item-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="person-header">
-    <xs:sequence>
-      <xs:element name="person" type="person" />
-      <xs:element name="mentionings" type="mentionings" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="person">
-    <xs:sequence>
-      <xs:element name="persName" type="persName" />
-      <xs:element name="person-info" type="stringtype" minOccurs="0" />
-    </xs:sequence>
-    <xs:attribute name="id" type="idtype" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="persName" mixed="true">
-    <xs:all>
-      <xs:element name="forename" type="name" minOccurs="0" />
-      <xs:element name="surname" type="name" minOccurs="0" />
-      <xs:element name="maidenname" type="name" minOccurs="0" />
-      <xs:element name="genName" type="name" minOccurs="0" />
-    </xs:all>
   </xs:complexType>
 
   <!-- TODO: person, event (?) -->
