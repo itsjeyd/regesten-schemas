@@ -211,7 +211,7 @@
   <xs:complexType name="geogName">
     <xs:sequence>
       <xs:element name="name" type="name" />
-      <xs:element name="addNames" type="addNames" />
+      <xs:element name="addNames" type="addNames" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="type" type="stringtype" />
   </xs:complexType>
@@ -227,7 +227,7 @@
   <xs:complexType name="family-name">
     <xs:sequence>
       <xs:element name="name" type="name" />
-      <xs:element name="addNames" type="addNames" />
+      <xs:element name="addNames" type="addNames" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
