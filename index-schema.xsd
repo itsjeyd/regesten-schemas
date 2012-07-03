@@ -40,6 +40,13 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="subitemtype">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="person" />
+      <xs:enumeration value="other" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- Complex Elements -->
   <xs:element name="index">
     <xs:complexType>
@@ -234,7 +241,7 @@
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute name="type" type="stringtype" use="required" />
+    <xs:attribute name="type" type="subitemtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="addNames">
