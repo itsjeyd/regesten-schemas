@@ -228,13 +228,19 @@
     <xs:sequence>
       <xs:choice>
 	<xs:element name="person" type="person" />
-	<!-- TODO: event ... -->
+	<xs:element name="other" type="other" />
       </xs:choice>
       <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="type" type="stringtype" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="other" mixed="true">
+    <xs:sequence>
+      <xs:element name="o-text" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="addNames">
