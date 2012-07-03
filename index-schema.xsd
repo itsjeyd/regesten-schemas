@@ -130,40 +130,40 @@
   <xs:complexType name="location-header">
     <xs:sequence>
       <xs:element name="placeName" type="placeName" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="landmark-header">
     <xs:sequence>
       <xs:element name="geogName" type="geogName" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="individual-header">
     <xs:sequence>
       <xs:element name="person" type="person" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="family-header">
     <xs:sequence>
       <xs:element name="family-name" type="family-name" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="persongroup-header">
     <xs:sequence>
       <xs:element name="group-name" type="stringtype" />
-      <xs:element name="index-refs" type="index-refs" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
+      <xs:element name="index-refs" type="index-refs" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
