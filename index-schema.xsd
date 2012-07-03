@@ -10,6 +10,10 @@
     <xs:restriction base="xs:ID" />
   </xs:simpleType>
 
+  <xs:simpleType name="idreftype">
+    <xs:restriction base="xs:IDREF" />
+  </xs:simpleType>
+
   <xs:simpleType name="booleantype">
     <xs:restriction base="xs:boolean" />
   </xs:simpleType>
@@ -158,7 +162,7 @@
   <xs:complexType name="persongroup-header">
     <xs:sequence>
       <xs:element name="group-name" type="stringtype" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
+      <xs:element name="index-refs" type="index-refs" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -211,6 +215,12 @@
   <xs:complexType name="mentionings">
     <xs:sequence>
       <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="index-refs">
+    <xs:sequence>
+      <xs:element name="index-ref" type="index-ref" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -281,6 +291,14 @@
     <xs:simpleContent>
       <xs:extension base="stringtype">
 	<xs:attribute name="id" type="idtype" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="index-ref">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="entity" type="idreftype" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
