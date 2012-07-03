@@ -213,6 +213,7 @@
       <xs:element name="name" type="name" />
       <xs:element name="addNames" type="addNames" />
     </xs:sequence>
+    <xs:attribute name="type" type="stringtype" />
   </xs:complexType>
 
   <xs:complexType name="person">
