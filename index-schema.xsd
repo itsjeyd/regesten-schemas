@@ -189,7 +189,7 @@
   <xs:complexType name="person">
     <xs:sequence>
       <xs:element name="persName" type="persName" />
-      <xs:element name="person-info" type="stringtype" minOccurs="0" />
+      <xs:element name="person-info" type="infotype" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="id" type="idtype" use="required" />
   </xs:complexType>
@@ -228,19 +228,13 @@
     <xs:sequence>
       <xs:choice>
 	<xs:element name="person" type="person" />
-	<xs:element name="other" type="other" />
+	<xs:element name="other" type="infotype" />
       </xs:choice>
       <xs:element name="index-refs" type="stringtype" minOccurs="0" />
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="context" type="context" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="type" type="stringtype" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="other" mixed="true">
-    <xs:sequence>
-      <xs:element name="o-text" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="addNames">
@@ -282,6 +276,12 @@
 	<xs:attribute name="id" type="idtype" use="required" />
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="infotype" mixed="true">
+    <xs:sequence>
+      <xs:element name="o-text" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
   </xs:complexType>
 
   <!-- TODO: person, event (?) -->
