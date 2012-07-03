@@ -290,7 +290,7 @@
   <xs:complexType name="reg-ref">
     <xs:simpleContent>
       <xs:extension base="stringtype">
-	<xs:attribute name="id" type="idtype" use="required" />
+	<xs:attribute name="regest" type="idreftype" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
