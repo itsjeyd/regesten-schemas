@@ -117,7 +117,7 @@
       <xs:extension base="item">
 	<xs:sequence>
 	  <xs:element name="item-header" type="individual-header" />
-	  <xs:element name="item-body" type="item-body" />
+	  <xs:element name="item-body" type="item-body" minOccurs="0" />
 	</xs:sequence>
       </xs:extension>
     </xs:complexContent>
