@@ -329,6 +329,4 @@
     </xs:sequence>
   </xs:complexType>
 
-  <!-- TODO: person, event (?) -->
-
 </xs:schema>
