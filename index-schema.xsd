@@ -22,6 +22,24 @@
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
+  <xs:simpleType name="itemidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="item_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="persidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="person_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="regidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="regest_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="name">
     <xs:restriction base="stringtype" />
   </xs:simpleType>
@@ -67,7 +85,7 @@
   </xs:element>
 
   <xs:complexType name="item">
-    <xs:attribute name="id" type="idtype" use="required" />
+    <xs:attribute name="id" type="itemidtype" use="required" />
     <xs:attribute name="type" type="itemtype" use="required" />
     <xs:attribute name="value" type="stringtype" use="required" />
   </xs:complexType>
@@ -202,7 +220,7 @@
       <xs:element name="persName" type="persName" />
       <xs:element name="person-info" type="infotype" minOccurs="0" />
     </xs:sequence>
-    <xs:attribute name="id" type="idtype" use="required" />
+    <xs:attribute name="id" type="persidtype" use="required" />
   </xs:complexType>
 
   <xs:complexType name="family-name">
