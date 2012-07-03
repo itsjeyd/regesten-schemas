@@ -274,7 +274,7 @@
   <xs:complexType name="index-ref">
     <xs:simpleContent>
       <xs:extension base="stringtype">
-	<xs:attribute name="entity" type="idreftype" />
+	<xs:attribute name="concept" type="idreftype" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
