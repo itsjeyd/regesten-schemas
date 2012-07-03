@@ -193,7 +193,7 @@
 
   <xs:complexType name="listing-body">
     <xs:sequence>
-      <xs:element name="member" type="member" maxOccurs="unbounded" />
+      <xs:element name="context" type="listing-context" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -251,12 +251,14 @@
     <xs:attribute name="type" type="stringtype" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="member">
+  <xs:complexType name="listing-context">
     <xs:sequence>
       <xs:element name="person" type="person" />
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="index-refs" type="stringtype" minOccurs="0" />
+      <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
+    <xs:attribute name="type" type="stringtype" fixed="member" />
   </xs:complexType>
 
   <xs:complexType name="subitem">
