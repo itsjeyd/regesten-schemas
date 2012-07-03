@@ -73,77 +73,32 @@
   <xs:element name="index">
     <xs:complexType>
       <xs:sequence>
-	<xs:choice minOccurs="1" maxOccurs="unbounded">
-	  <xs:element name="location" type="location" />
-	  <xs:element name="landmark" type="landmark" />
-	  <xs:element name="individual" type="individual" />
-	  <xs:element name="family" type="family" />
-	  <xs:element name="persongroup" type="persongroup" />
-	</xs:choice>
+	<xs:element name="item" type="item" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
   <xs:complexType name="item">
+    <xs:sequence>
+      <xs:element ref="item-header" />
+      <xs:element ref="item-body" minOccurs="0" />
+    </xs:sequence>
     <xs:attribute name="id" type="itemidtype" use="required" />
     <xs:attribute name="type" type="itemtype" use="required" />
     <xs:attribute name="value" type="stringtype" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="location">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="item-header" type="location-header" />
-	  <xs:element name="item-body" type="item-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+  <xs:element name="item-header" abstract="true" />
+  <xs:element name="item-body" abstract="true" />
 
-  <xs:complexType name="landmark">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="item-header" type="landmark-header" />
-	  <xs:element name="item-body" type="item-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+  <xs:element name="location-header" type="location-header" substitutionGroup="item-header" />
+  <xs:element name="landmark-header" type="landmark-header" substitutionGroup="item-header" />
+  <xs:element name="person-header" type="person-header" substitutionGroup="item-header" />
+  <xs:element name="family-header" type="family-header" substitutionGroup="item-header" />
+  <xs:element name="persongroup-header" type="persongroup-header" substitutionGroup="item-header" />
 
-  <xs:complexType name="individual">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="item-header" type="individual-header" />
-	  <xs:element name="item-body" type="item-body" minOccurs="0" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="family">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="item-header" type="family-header" />
-	  <xs:element name="item-body" type="listing-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="persongroup">
-    <xs:complexContent>
-      <xs:extension base="item">
-	<xs:sequence>
-	  <xs:element name="item-header" type="persongroup-header" />
-	  <xs:element name="item-body" type="listing-body" />
-	</xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+  <xs:element name="concept-body" type="concept-body" substitutionGroup="item-body" />
+  <xs:element name="listing-body" type="listing-body" substitutionGroup="item-body" />
 
   <xs:complexType name="location-header">
     <xs:sequence>
@@ -161,7 +116,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="individual-header">
+  <xs:complexType name="person-header">
     <xs:sequence>
       <xs:element name="person" type="person" />
       <xs:element name="mentionings" type="mentionings" />
@@ -185,7 +140,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="item-body">
+  <xs:complexType name="concept-body">
     <xs:sequence>
       <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
