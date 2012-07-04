@@ -177,6 +177,7 @@
       <xs:element name="person-info" type="infotype" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="id" type="persidtype" use="required" />
+    <xs:attribute name="itemid" type="idreftype" />
   </xs:complexType>
 
   <xs:complexType name="family-name">
