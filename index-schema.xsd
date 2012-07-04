@@ -212,7 +212,7 @@
       <xs:element name="person" type="person" />
       <xs:element name="mentionings" type="mentionings" />
       <xs:element name="index-refs" type="stringtype" minOccurs="0" />
-      <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute name="type" type="stringtype" fixed="member" />
   </xs:complexType>
