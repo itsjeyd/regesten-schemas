@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="regesten">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="regest" type="regest" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="regest">
+    <xs:sequence>
+      <xs:element name="title" type="stringtype" />
+      <xs:element name="pages" type="pages" />
+      <!-- TODO: location -->
+      <!-- TODO: type -->
+      <xs:element name="content" type="content" />
+      <xs:element name="date" type="date-original" />
+      <xs:element name="sieglerinfo" type="stringtype" />
+      <xs:element name="archives" type="archives" />
+      <xs:element name="print" type="stringtype" />
+      <!-- TODO: translation -->
+      <xs:element name="original" type="stringtype" />
+    </xs:sequence>
+    <xs:attribute name="id" type="regidtype" />
+  </xs:complexType>
+
+  <xs:simpleType name="stringtype">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <xs:simpleType name="pages">
+    <xs:restriction base="stringtype">
+      <xs:pattern value="[1-9][0-9]*f?f?" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="content" mixed="true">
+    <xs:sequence>
+      <xs:element name="aussteller" type="stringtype" minOccurs="0" />
+      <xs:element name="quote" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
+      <!-- TODO: names -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date-original">
+    <xs:sequence>
+      <xs:element name="quote" type="stringtype" />
+      <xs:element name="comment" type="stringtype" minOccurs="0" /> <!-- TODO: ID attribute (Why?) -->
+    </xs:sequence>
+    <xs:attribute name="type" fixed="original" />
+  </xs:complexType>
+
+  <xs:complexType name="archives">
+    <xs:sequence>
+      <xs:element name="archive" type="stringtype" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="idtype">
+    <xs:restriction base="xs:ID" />
+  </xs:simpleType>
+
+  <xs:simpleType name="regidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="regest_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
