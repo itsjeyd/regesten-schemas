@@ -11,7 +11,6 @@
 
   <xs:complexType name="regest">
     <xs:sequence>
-      <xs:element name="title" type="stringtype" />
       <xs:element name="pages" type="pages" />
       <!-- TODO: location -->
       <!-- TODO: type -->
@@ -24,6 +23,7 @@
       <xs:element name="original" type="stringtype" />
     </xs:sequence>
     <xs:attribute name="id" type="regidtype" />
+    <xs:attribute name="title" type="stringtype" />
   </xs:complexType>
 
   <xs:simpleType name="stringtype">
