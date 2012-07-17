@@ -11,7 +11,7 @@
 
   <xs:complexType name="regest">
     <xs:sequence>
-      <!-- TODO: location -->
+      <xs:element name="location" type="stringtype" minOccurs="0" />
       <!-- TODO: type -->
       <xs:element name="content" type="content" />
       <xs:element name="date" type="date-original" />
