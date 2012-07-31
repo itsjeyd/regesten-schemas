@@ -19,7 +19,7 @@
       <xs:element name="sieglerinfo" type="stringtype" />
       <xs:element name="archives" type="archives" />
       <xs:element name="print" type="stringtype" />
-      <!-- TODO: translation -->
+      <xs:element name="translation" type="stringtype" />
       <xs:element name="original" type="stringtype" />
       <xs:element name="pages" type="pages" />
     </xs:sequence>
