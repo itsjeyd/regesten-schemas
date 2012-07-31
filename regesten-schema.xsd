@@ -104,7 +104,6 @@
       <xs:element name="quote" type="stringtype" />
       <xs:element name="comment" type="stringtype" minOccurs="0" /> <!-- TODO: ID attribute (Why?) -->
     </xs:sequence>
-    <xs:attribute name="type" fixed="original" />
   </xs:complexType>
 
   <xs:complexType name="archives">
