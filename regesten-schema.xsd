@@ -31,6 +31,10 @@
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
+  <xs:simpleType name="idreftype">
+    <xs:restriction base="xs:IDREF" />
+  </xs:simpleType>
+
   <xs:simpleType name="datetype">
     <xs:restriction base="xs:date" />
   </xs:simpleType>
