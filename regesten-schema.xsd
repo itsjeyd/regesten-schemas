@@ -11,7 +11,7 @@
 
   <xs:complexType name="regest">
     <xs:sequence>
-      <xs:element name="date" type="xs:date" />
+      <xs:element name="date" type="date" />
       <xs:element name="location" type="stringtype" minOccurs="0" />
       <!-- TODO: type -->
       <xs:element name="content" type="content" />
@@ -29,6 +29,30 @@
 
   <xs:simpleType name="stringtype">
     <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <xs:simpleType name="datetype">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+
+  <xs:complexType name="date" mixed="true">
+    <xs:sequence>
+      <xs:element name="from" type="datetype" minOccurs="0" />
+      <xs:element name="to" type="datetype" minOccurs="0" />
+      <xs:element name="altDate" type="datetype" minOccurs="0" />
+      <xs:element name="offset" type="offset" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="exact" type="xs:boolean" />
+  </xs:complexType>
+
+  <xs:simpleType name="offset">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="vor" />
+      <xs:enumeration value="nach" />
+      <xs:enumeration value="um" />
+      <xs:enumeration value="ca." />
+      <xs:enumeration value="kurz nach" />
+    </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="pages">
