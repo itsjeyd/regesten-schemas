@@ -83,7 +83,7 @@
 
   <xs:complexType name="quote" mixed="true">
     <xs:sequence>
-      <xs:element name="name" type="name" maxOccurs="unbounded" />
+      <xs:element name="name" type="name" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
