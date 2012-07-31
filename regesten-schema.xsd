@@ -40,18 +40,22 @@
   </xs:simpleType>
 
   <xs:complexType name="date" mixed="true">
-    <xs:sequence>
-      <xs:sequence minOccurs="0">
-	<xs:element name="from" type="datetype" />
+    <xs:choice>
+      <xs:sequence>
+	<xs:sequence>
+	  <xs:element name="from" type="datetype" />
+	  <xs:element name="offset" type="offset" minOccurs="0" />
+	</xs:sequence>
+	<xs:sequence>
+	  <xs:element name="to" type="datetype" />
+	  <xs:element name="offset" type="offset" minOccurs="0" />
+	</xs:sequence>
+      </xs:sequence>
+      <xs:sequence>
+	<xs:element name="altDate" type="datetype" minOccurs="0" />
 	<xs:element name="offset" type="offset" minOccurs="0" />
       </xs:sequence>
-      <xs:sequence minOccurs="0">
-	<xs:element name="to" type="datetype" />
-	<xs:element name="offset" type="offset" minOccurs="0" />
-      </xs:sequence>
-      <xs:element name="altDate" type="datetype" minOccurs="0" />
-      <xs:element name="offset" type="offset" minOccurs="0" />
-    </xs:sequence>
+    </xs:choice>
     <xs:attribute name="exact" type="xs:boolean" />
   </xs:complexType>
 
