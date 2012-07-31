@@ -66,9 +66,17 @@
       <xs:element name="aussteller" type="stringtype" minOccurs="0" />
       <xs:choice minOccurs="0" maxOccurs="unbounded">
 	<xs:element name="quote" type="stringtype" />
-	<xs:element name="name" type="stringtype" />
+	<xs:element name="name" type="name" />
       </xs:choice>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="name">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="itemid" type="idreftype" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="date-original">
