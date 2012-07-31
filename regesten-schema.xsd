@@ -65,9 +65,15 @@
     <xs:sequence>
       <xs:element name="aussteller" type="stringtype" minOccurs="0" />
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-	<xs:element name="quote" type="stringtype" />
+	<xs:element name="quote" type="quote" />
 	<xs:element name="name" type="name" />
       </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="quote" mixed="true">
+    <xs:sequence>
+      <xs:element name="name" type="name" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
