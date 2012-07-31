@@ -64,8 +64,10 @@
   <xs:complexType name="content" mixed="true">
     <xs:sequence>
       <xs:element name="aussteller" type="stringtype" minOccurs="0" />
-      <xs:element name="quote" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
-      <!-- TODO: names -->
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+	<xs:element name="quote" type="stringtype" />
+	<xs:element name="name" type="stringtype" />
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
