@@ -12,15 +12,15 @@
   <xs:complexType name="regest">
     <xs:sequence>
       <xs:element name="date" type="date" />
-      <xs:element name="location" type="stringtype" minOccurs="0" />
-      <xs:element name="type" type="stringtype" minOccurs="0" />
+      <xs:element name="location" type="extendedstringtype" minOccurs="0" />
+      <xs:element name="type" type="extendedstringtype" minOccurs="0" />
       <xs:element name="content" type="content" />
       <xs:element name="date-original" type="date-original" />
-      <xs:element name="sieglerinfo" type="stringtype" />
+      <xs:element name="sieglerinfo" type="extendedstringtype" />
       <xs:element name="archives" type="archives" />
-      <xs:element name="print" type="stringtype" />
-      <xs:element name="translation" type="stringtype" minOccurs="0" />
-      <xs:element name="original" type="stringtype" />
+      <xs:element name="print" type="extendedstringtype" />
+      <xs:element name="translation" type="extendedstringtype" minOccurs="0" />
+      <xs:element name="original" type="extendedstringtype" />
       <xs:element name="pages" type="pages" />
     </xs:sequence>
     <xs:attribute name="id" type="regidtype" />
@@ -38,6 +38,12 @@
   <xs:simpleType name="datetype">
     <xs:restriction base="xs:date" />
   </xs:simpleType>
+
+  <xs:complexType name="extendedstringtype" mixed="true">
+    <xs:sequence>
+      <xs:element name="footnote" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="date" mixed="true">
     <xs:choice>
@@ -81,14 +87,16 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
 	<xs:element name="quote" type="quote" />
 	<xs:element name="name" type="name" />
+	<xs:element name="footnote" type="stringtype" />
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="quote" mixed="true">
-    <xs:sequence>
-      <xs:element name="name" type="name" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="name" type="name" />
+      <xs:element name="footnote" type="stringtype" />
+    </xs:choice>
   </xs:complexType>
 
   <xs:complexType name="name">
@@ -101,14 +109,13 @@
 
   <xs:complexType name="date-original">
     <xs:sequence>
-      <xs:element name="quote" type="stringtype" />
-      <xs:element name="comment" type="stringtype" minOccurs="0" /> <!-- TODO: ID attribute (Why?) -->
+      <xs:element name="quote" type="quote" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="archives">
     <xs:sequence>
-      <xs:element name="archive" type="stringtype" maxOccurs="unbounded" />
+      <xs:element name="archive" type="extendedstringtype" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
