@@ -86,13 +86,20 @@
     </xs:choice>
   </xs:complexType>
 
-  <xs:element name="regesten">
+  <xs:element name="document">
     <xs:complexType>
       <xs:sequence>
-	<xs:element name="regest" type="regest" maxOccurs="unbounded" />
+	<xs:element name="regesten" type="regesten" />
+	<xs:element name="index" type="index" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="regesten">
+    <xs:sequence>
+      <xs:element name="regest" type="regest" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="regest">
     <xs:sequence>
@@ -173,13 +180,11 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:element name="index">
-    <xs:complexType>
-      <xs:sequence>
-	<xs:element name="item" type="item" maxOccurs="unbounded" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  <xs:complexType name="index">
+    <xs:sequence>
+      <xs:element name="item" type="item" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="item">
     <xs:sequence>
