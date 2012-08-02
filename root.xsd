@@ -49,10 +49,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="name">
-    <xs:restriction base="stringtype" />
-  </xs:simpleType>
-
   <xs:simpleType name="itemtype">
     <xs:restriction base="stringtype">
       <xs:enumeration value="location" />
@@ -272,7 +268,7 @@
 
   <xs:complexType name="geogName">
     <xs:sequence>
-      <xs:element name="name" type="name" />
+      <xs:element name="name" type="stringtype" />
       <xs:element name="addNames" type="addNames" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="type" type="stringtype" />
@@ -289,7 +285,7 @@
 
   <xs:complexType name="family-name">
     <xs:sequence>
-      <xs:element name="name" type="name" />
+      <xs:element name="name" type="stringtype" />
       <xs:element name="addNames" type="addNames" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -340,7 +336,7 @@
 
   <xs:complexType name="addNames">
     <xs:sequence>
-      <xs:element name="addName" type="name" maxOccurs="unbounded" />
+      <xs:element name="addName" type="stringtype" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -364,10 +360,10 @@
 
   <xs:complexType name="persName" mixed="true">
     <xs:all>
-      <xs:element name="forename" type="name" minOccurs="0" />
-      <xs:element name="surname" type="name" minOccurs="0" />
-      <xs:element name="maidenname" type="name" minOccurs="0" />
-      <xs:element name="genName" type="name" minOccurs="0" />
+      <xs:element name="forename" type="stringtype" minOccurs="0" />
+      <xs:element name="surname" type="stringtype" minOccurs="0" />
+      <xs:element name="maidenname" type="stringtype" minOccurs="0" />
+      <xs:element name="genName" type="stringtype" minOccurs="0" />
     </xs:all>
   </xs:complexType>
 
