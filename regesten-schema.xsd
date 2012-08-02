@@ -1,6 +1,50 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:simpleType name="idtype">
+    <xs:restriction base="xs:ID" />
+  </xs:simpleType>
+
+  <xs:simpleType name="idreftype">
+    <xs:restriction base="xs:IDREF" />
+  </xs:simpleType>
+
+  <xs:simpleType name="datetype">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+
+  <xs:simpleType name="stringtype">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <xs:simpleType name="regidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="regest_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="offset">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="vor" />
+      <xs:enumeration value="nach" />
+      <xs:enumeration value="um" />
+      <xs:enumeration value="ca." />
+      <xs:enumeration value="kurz nach" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pages">
+    <xs:restriction base="stringtype">
+      <xs:pattern value="[1-9][0-9]*f?f?" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="extendedstringtype" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="footnote" type="stringtype" />
+    </xs:choice>
+  </xs:complexType>
+
   <xs:element name="regesten">
     <xs:complexType>
       <xs:sequence>
@@ -27,24 +71,6 @@
     <xs:attribute name="title" type="stringtype" />
   </xs:complexType>
 
-  <xs:simpleType name="stringtype">
-    <xs:restriction base="xs:string" />
-  </xs:simpleType>
-
-  <xs:simpleType name="idreftype">
-    <xs:restriction base="xs:IDREF" />
-  </xs:simpleType>
-
-  <xs:simpleType name="datetype">
-    <xs:restriction base="xs:date" />
-  </xs:simpleType>
-
-  <xs:complexType name="extendedstringtype" mixed="true">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="footnote" type="stringtype" />
-    </xs:choice>
-  </xs:complexType>
-
   <xs:complexType name="date" mixed="true">
     <xs:choice>
       <xs:sequence>
@@ -65,22 +91,6 @@
     <xs:attribute name="exact" type="xs:boolean" />
   </xs:complexType>
 
-  <xs:simpleType name="offset">
-    <xs:restriction base="stringtype">
-      <xs:enumeration value="vor" />
-      <xs:enumeration value="nach" />
-      <xs:enumeration value="um" />
-      <xs:enumeration value="ca." />
-      <xs:enumeration value="kurz nach" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="pages">
-    <xs:restriction base="stringtype">
-      <xs:pattern value="[1-9][0-9]*f?f?" />
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:complexType name="content" mixed="true">
     <xs:sequence>
       <xs:element name="aussteller" type="stringtype" minOccurs="0" />
@@ -90,24 +100,6 @@
 	<xs:element name="footnote" type="stringtype" />
       </xs:choice>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="quote" mixed="true">
-    <xs:complexContent>
-      <xs:extension base="extendedstringtype">
-	<xs:choice minOccurs="0" maxOccurs="unbounded">
-	  <xs:element name="name" type="name" />
-	</xs:choice>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:complexType name="name">
-    <xs:simpleContent>
-      <xs:extension base="stringtype">
-	<xs:attribute name="itemid" type="idreftype" />
-      </xs:extension>
-    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="date-original">
@@ -122,14 +114,22 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="idtype">
-    <xs:restriction base="xs:ID" />
-  </xs:simpleType>
+  <xs:complexType name="name">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="itemid" type="idreftype" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
-  <xs:simpleType name="regidtype">
-    <xs:restriction base="idtype">
-      <xs:pattern value="regest_[0-9]+" />
-    </xs:restriction>
-  </xs:simpleType>
+  <xs:complexType name="quote" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="extendedstringtype">
+	<xs:choice minOccurs="0" maxOccurs="unbounded">
+	  <xs:element name="name" type="name" />
+	</xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
 </xs:schema>
