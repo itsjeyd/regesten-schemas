@@ -115,7 +115,7 @@
 
   <xs:complexType name="references">
     <xs:sequence>
-      <xs:element name="reference" type="stringtype" />
+      <xs:element name="reference" type="stringtype" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
