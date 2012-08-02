@@ -13,6 +13,10 @@
     <xs:restriction base="xs:boolean" />
   </xs:simpleType>
 
+  <xs:simpleType name="datetype">
+    <xs:restriction base="xs:date" />
+  </xs:simpleType>
+
   <xs:simpleType name="stringtype">
     <xs:restriction base="xs:string" />
   </xs:simpleType>
