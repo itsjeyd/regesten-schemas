@@ -89,11 +89,35 @@
   <xs:element name="document">
     <xs:complexType>
       <xs:sequence>
+	<xs:element name="preface" type="extendedstringtype" />
+	<xs:element name="references" type="references" />
+	<xs:element name="abbrev-list" type="abbrev-list" />
+	<xs:element name="initials-list" type="initials-list" />
 	<xs:element name="regesten" type="regesten" />
 	<xs:element name="index" type="index" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="references">
+    <xs:sequence>
+      <xs:element name="reference" type="stringtype" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="abbrev-list" mixed="true">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="abbrev" type="stringtype" />
+      <xs:element name="meaning" type="stringtype" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initials-list">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="initials" type="stringtype" />
+      <xs:element name="referent" type="stringtype" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="regesten">
     <xs:sequence>
