@@ -40,9 +40,9 @@
   </xs:simpleType>
 
   <xs:complexType name="extendedstringtype" mixed="true">
-    <xs:sequence>
-      <xs:element name="footnote" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="footnote" type="stringtype" />
+    </xs:choice>
   </xs:complexType>
 
   <xs:complexType name="date" mixed="true">
@@ -93,10 +93,13 @@
   </xs:complexType>
 
   <xs:complexType name="quote" mixed="true">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="name" type="name" />
-      <xs:element name="footnote" type="stringtype" />
-    </xs:choice>
+    <xs:complexContent>
+      <xs:extension base="extendedstringtype">
+	<xs:choice minOccurs="0" maxOccurs="unbounded">
+	  <xs:element name="name" type="name" />
+	</xs:choice>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="name">
