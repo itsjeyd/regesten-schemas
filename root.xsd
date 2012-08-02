@@ -33,6 +33,12 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="fnidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="fn_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="offset">
     <xs:restriction base="stringtype">
       <xs:enumeration value="vor" />
@@ -82,8 +88,16 @@
 
   <xs:complexType name="extendedstringtype" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="footnote" type="stringtype" />
+      <xs:element name="footnote" type="footnote" />
     </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="footnote">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="id" type="fnidtype" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:element name="document">
@@ -169,7 +183,7 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
 	<xs:element name="quote" type="quote" />
 	<xs:element name="name" type="name" />
-	<xs:element name="footnote" type="stringtype" />
+	<xs:element name="footnote" type="footnote" />
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
