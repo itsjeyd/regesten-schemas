@@ -428,7 +428,7 @@
 
   <xs:complexType name="infotype" mixed="true">
     <xs:sequence>
-      <xs:element name="o-text" type="stringtype" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
