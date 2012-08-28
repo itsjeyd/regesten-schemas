@@ -144,7 +144,7 @@
       <xs:element name="date" type="date" />
       <xs:element name="location" type="extendedstringtype" minOccurs="0" />
       <xs:element name="type" type="extendedstringtype" minOccurs="0" />
-      <xs:element name="content" type="content" />
+      <xs:element name="content" type="regest-content" />
       <xs:element name="date-original" type="quote" />
       <xs:element name="sealer" type="extendedstringtype" />
       <xs:element name="archives" type="archives" />
@@ -177,7 +177,7 @@
     <xs:attribute name="exact" type="xs:boolean" />
   </xs:complexType>
 
-  <xs:complexType name="content" mixed="true">
+  <xs:complexType name="regest-content" mixed="true">
     <xs:sequence>
       <xs:element name="issuer" type="stringtype" minOccurs="0" />
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -314,7 +314,7 @@
   <xs:complexType name="person">
     <xs:sequence>
       <xs:element name="persName" type="persName" />
-      <xs:element name="person-info" type="infotype" minOccurs="0" />
+      <xs:element name="person-info" type="content" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="id" type="persidtype" use="required" />
     <xs:attribute name="itemid" type="idreftype" />
@@ -362,7 +362,7 @@
     <xs:sequence>
       <xs:choice minOccurs="0">
 	<xs:element name="person" type="person" />
-	<xs:element name="other" type="infotype" />
+	<xs:element name="other" type="content" /> <!-- TODO: This is treated as a Concept in Django data model -->
       </xs:choice>
       <xs:element name="mentionings" type="mentionings" minOccurs="0" />
       <xs:element name="index-refs" type="stringtype" minOccurs="0" />
@@ -421,7 +421,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="infotype" mixed="true">
+  <xs:complexType name="content" mixed="true">
     <xs:sequence>
       <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
