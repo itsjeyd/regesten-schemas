@@ -399,8 +399,9 @@
     <xs:all>
       <xs:element name="forename" type="stringtype" minOccurs="0" />
       <xs:element name="surname" type="stringtype" minOccurs="0" />
-      <xs:element name="maidenname" type="stringtype" minOccurs="0" />
       <xs:element name="genName" type="stringtype" minOccurs="0" />
+      <xs:element name="maidenname" type="stringtype" minOccurs="0" />
+      <xs:element name="addNames" type="addNames" minOccurs="0" />
     </xs:all>
   </xs:complexType>
 
