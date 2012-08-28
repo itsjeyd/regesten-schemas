@@ -179,7 +179,7 @@
 
   <xs:complexType name="content" mixed="true">
     <xs:sequence>
-      <xs:element name="aussteller" type="stringtype" minOccurs="0" />
+      <xs:element name="issuer" type="stringtype" minOccurs="0" />
       <xs:choice minOccurs="0" maxOccurs="unbounded">
 	<xs:element name="quote" type="quote" />
 	<xs:element name="name" type="name" />
