@@ -145,7 +145,7 @@
       <xs:element name="location" type="extendedstringtype" minOccurs="0" />
       <xs:element name="type" type="extendedstringtype" minOccurs="0" />
       <xs:element name="content" type="content" />
-      <xs:element name="date-original" type="date-original" />
+      <xs:element name="date-original" type="quote" />
       <xs:element name="sealer" type="extendedstringtype" />
       <xs:element name="archives" type="archives" />
       <xs:element name="print" type="extendedstringtype" />
@@ -185,12 +185,6 @@
 	<xs:element name="name" type="name" />
 	<xs:element name="footnote" type="footnote" />
       </xs:choice>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="date-original">
-    <xs:sequence>
-      <xs:element name="quote" type="quote" />
     </xs:sequence>
   </xs:complexType>
 
