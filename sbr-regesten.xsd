@@ -49,12 +49,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="pages">
-    <xs:restriction base="stringtype">
-      <xs:pattern value="[1-9][0-9]*f?f?" />
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="itemtype">
     <xs:restriction base="stringtype">
       <xs:enumeration value="location" />
@@ -144,7 +138,6 @@
       <xs:element name="print" type="extendedstringtype" />
       <xs:element name="translation" type="extendedstringtype" minOccurs="0" />
       <xs:element name="original" type="extendedstringtype" />
-      <xs:element name="pages" type="pages" />
     </xs:sequence>
     <xs:attribute name="id" type="regidtype" />
     <xs:attribute name="title" type="stringtype" />
