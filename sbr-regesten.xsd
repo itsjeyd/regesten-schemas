@@ -278,27 +278,6 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="members">
-    <xs:sequence>
-      <xs:element name="person" type="person" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="related_concepts">
-    <xs:choice maxOccurs="unbounded">
-      <xs:element name="concept" type="concept" />
-      <xs:element name="person" type="person" />
-    </xs:choice>
-  </xs:complexType>
-
-  <xs:complexType name="concept">
-    <xs:sequence>
-      <xs:element name="name" type="content" />
-      <xs:element name="mentioned_in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="placeName">
     <xs:sequence>
       <xs:element name="addNames" type="addNames" minOccurs="0" />
@@ -348,7 +327,26 @@
     </xs:sequence>
   </xs:complexType>
 
-  <!-- related_concepts, members, concept should go here -->
+  <xs:complexType name="related_concepts">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="concept" type="concept" />
+      <xs:element name="person" type="person" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="members">
+    <xs:sequence>
+      <xs:element name="person" type="person" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="concept">
+    <xs:sequence>
+      <xs:element name="name" type="content" />
+      <xs:element name="mentioned_in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="addNames">
     <xs:sequence>
