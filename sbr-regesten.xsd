@@ -73,13 +73,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="subitemtype">
-    <xs:restriction base="stringtype">
-      <xs:enumeration value="person" />
-      <xs:enumeration value="other" />
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="persidtype">
     <xs:restriction base="stringtype">
       <xs:pattern value="person_[0-9]+" />
@@ -282,13 +275,34 @@
 
   <xs:complexType name="concept-body">
     <xs:sequence>
-      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="listing-body">
     <xs:sequence>
-      <xs:element name="context" type="listing-context" maxOccurs="unbounded" />
+      <xs:element name="members" type="members" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="members">
+    <xs:sequence>
+      <xs:element name="person" type="person" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="related_concepts">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="concept" type="concept" />
+      <xs:element name="person" type="person" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="concept">
+    <xs:sequence>
+      <xs:element name="name" type="content" />
+      <xs:element name="mentioned_in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
@@ -315,6 +329,8 @@
     <xs:sequence>
       <xs:element name="persName" type="persName" />
       <xs:element name="person-info" type="content" minOccurs="0" />
+      <xs:element name="mentioned_in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute name="id" type="persidtype" use="required" />
     <xs:attribute name="itemid" type="idreftype" />
@@ -339,37 +355,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="context">
-    <xs:sequence>
-      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
-      <xs:element name="subitem" type="subitem" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-    <xs:attribute name="type" type="stringtype" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="listing-context">
-    <xs:sequence>
-      <xs:element name="person" type="person" />
-      <xs:element name="mentionings" type="mentionings" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
-      <xs:element name="context" type="context" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-    <xs:attribute name="type" type="stringtype" fixed="member" />
-  </xs:complexType>
-
-  <xs:complexType name="subitem">
-    <xs:sequence>
-      <xs:choice minOccurs="0">
-	<xs:element name="person" type="person" />
-	<xs:element name="other" type="content" /> <!-- TODO: This is treated as a Concept in Django data model -->
-      </xs:choice>
-      <xs:element name="mentionings" type="mentionings" minOccurs="0" />
-      <xs:element name="index-refs" type="stringtype" minOccurs="0" />
-      <xs:element name="context" type="context" minOccurs="0" />
-    </xs:sequence>
-    <xs:attribute name="type" type="subitemtype" use="required" />
-  </xs:complexType>
+  <!-- related_concepts, members, concept should go here -->
 
   <xs:complexType name="addNames">
     <xs:sequence>
