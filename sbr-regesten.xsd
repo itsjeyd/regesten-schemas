@@ -252,7 +252,7 @@
   <xs:complexType name="person-header">
     <xs:sequence>
       <xs:element name="person" type="person" />
-      <xs:element name="mentioned_in" type="mentionings" />
+      <xs:element name="mentioned_in" type="mentionings" minOccurs="0" />
       <xs:element name="index-refs" type="index-refs" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
