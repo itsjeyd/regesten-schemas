@@ -95,6 +95,7 @@
 	<xs:element name="abbrev-list" type="abbrev-list" />
 	<xs:element name="initials-list" type="abbrev-list" />
 	<xs:element name="regesten" type="regesten" />
+	<xs:element name="archive-list" type="generic-list" />
 	<xs:element name="index" type="index" />
       </xs:sequence>
     </xs:complexType>
@@ -132,6 +133,20 @@
       <xs:element name="abbr" type="stringtype" />
       <xs:element name="expan" type="stringtype" />
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generic-list">
+    <xs:sequence>
+      <xs:element name="entry" type="entry" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entry">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="title" type="stringtype" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="regesten">
