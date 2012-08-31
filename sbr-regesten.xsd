@@ -122,8 +122,9 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="abbrev-list" mixed="true">
+  <xs:complexType name="abbrev-list">
     <xs:sequence>
+      <xs:element name="list-info" type="stringtype" minOccurs="0" />
       <xs:element name="entry" type="abbrev" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
