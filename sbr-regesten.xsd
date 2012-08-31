@@ -87,7 +87,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="document">
+  <xs:element name="sbr-regesten">
     <xs:complexType>
       <xs:sequence>
 	<xs:element name="preface" type="extendedstringtype" />
