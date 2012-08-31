@@ -131,7 +131,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <!-- (3.3 Archives) -->
+  <!-- (3.3) Archives -->
 
   <xs:complexType name="archives">
     <xs:sequence>
