@@ -101,7 +101,7 @@
 	<xs:element name="offset" type="offset" minOccurs="0" />
       </xs:sequence>
     </xs:choice>
-    <xs:attribute name="exact" type="xs:boolean" /> <!-- TODO: Use booleantype here -->
+    <xs:attribute name="exact" type="booleantype" />
   </xs:complexType>
 
   <xs:simpleType name="datetype">
