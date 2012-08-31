@@ -229,6 +229,7 @@
 
   <xs:complexType name="index">
     <xs:sequence>
+      <xs:element name="index-info" type="stringtype" />
       <xs:element name="item" type="item" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
