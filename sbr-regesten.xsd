@@ -67,7 +67,7 @@
 
   <xs:complexType name="regest">
     <xs:sequence>
-      <xs:element name="date" type="date" />
+      <xs:element name="date" type="regest-date" />
       <xs:element name="location" type="extendedstringtype" minOccurs="0" />
       <xs:element name="type" type="extendedstringtype" minOccurs="0" />
       <xs:element name="content" type="regest-content" />
@@ -84,7 +84,7 @@
 
   <!-- (3.1) Date -->
 
-  <xs:complexType name="date" mixed="true"> <!-- TODO: Rename to regest-date -->
+  <xs:complexType name="regest-date" mixed="true">
     <xs:choice>
       <xs:sequence>
 	<xs:sequence>
