@@ -91,7 +91,7 @@
     <xs:complexType>
       <xs:sequence>
 	<xs:element name="preface" type="extendedstringtype" />
-	<xs:element name="references" type="references" />
+	<xs:element name="listBibl" type="listBibl" />
 	<xs:element name="abbrev-list" type="abbrev-list" />
 	<xs:element name="initials-list" type="initials-list" />
 	<xs:element name="regesten" type="regesten" />
@@ -100,11 +100,26 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="references">
+  <xs:complexType name="listBibl">
     <xs:sequence>
-      <xs:element name="reference" type="stringtype" maxOccurs="unbounded" />
+      <xs:element name="listBibl-info" type="stringtype" />
+      <xs:element name="bibl" type="bibl" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="bibl">
+    <xs:simpleContent>
+      <xs:extension base="stringtype">
+	<xs:attribute name="id" type="biblidtype" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="biblidtype">
+    <xs:restriction base="idtype">
+      <xs:pattern value="bibl_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="abbrev-list" mixed="true">
     <xs:sequence maxOccurs="unbounded">
