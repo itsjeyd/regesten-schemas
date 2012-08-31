@@ -257,7 +257,7 @@
   <xs:element name="concept-body" type="concept-body" substitutionGroup="item-body" />
   <xs:element name="listing-body" type="listing-body" substitutionGroup="item-body" />
 
-  <xs:complexType name="location-header">
+  <xs:complexType name="location-header" mixed="true">
     <xs:sequence>
       <xs:element name="placeName" type="placeName" />
       <xs:element name="mentioned_in" type="mentionings" minOccurs="0" />
@@ -265,7 +265,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="landmark-header">
+  <xs:complexType name="landmark-header" mixed="true">
     <xs:sequence>
       <xs:element name="geogName" type="geogName" />
       <xs:element name="mentioned_in" type="mentionings" minOccurs="0" />
@@ -273,7 +273,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="person-header">
+  <xs:complexType name="person-header" mixed="true">
     <xs:sequence>
       <xs:element name="person" type="person" />
       <xs:element name="mentioned_in" type="mentionings" minOccurs="0" />
@@ -281,7 +281,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="family-header">
+  <xs:complexType name="family-header" mixed="true">
     <xs:sequence>
       <xs:element name="family-name" type="family-name" />
       <xs:element name="location" type="placeName" minOccurs="0" />
@@ -290,7 +290,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="persongroup-header">
+  <xs:complexType name="persongroup-header" mixed="true">
     <xs:sequence>
       <xs:element name="group-name" type="stringtype" />
       <xs:element name="mentioned_in" type="mentionings" minOccurs="0" />
