@@ -154,7 +154,7 @@
       <xs:element name="translation" type="extendedstringtype" minOccurs="0" />
       <xs:element name="original" type="extendedstringtype" />
     </xs:sequence>
-    <xs:attribute name="id" type="regidtype" />
+    <xs:attribute name="id" type="regidtype" use="required" />
     <xs:attribute name="title" type="stringtype" />
   </xs:complexType>
 
