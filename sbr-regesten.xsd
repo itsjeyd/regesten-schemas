@@ -420,9 +420,15 @@
     </xs:choice>
   </xs:complexType>
 
+  <xs:complexType name="content" mixed="true">
+    <xs:sequence>
+      <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="footnote">
     <xs:simpleContent>
-      <xs:extension base="stringtype">
+      <xs:extension base="content">
 	<xs:attribute name="id" type="fnidtype" />
       </xs:extension>
     </xs:simpleContent>
@@ -433,12 +439,6 @@
       <xs:pattern value="fn_[0-9]+" />
     </xs:restriction>
   </xs:simpleType>
-
-  <xs:complexType name="content" mixed="true">
-    <xs:sequence>
-      <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
 
   <xs:complexType name="quote" mixed="true">
     <xs:complexContent>
