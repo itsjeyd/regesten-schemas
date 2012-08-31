@@ -434,7 +434,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="content" mixed="true"> <!-- TODO: Rename + have it inherit from infotype -->
+  <xs:complexType name="content" mixed="true">
     <xs:sequence>
       <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
