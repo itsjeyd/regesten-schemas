@@ -412,7 +412,7 @@
     </xs:choice>
   </xs:complexType>
 
-  <xs:complexType name="content-infotype">
+  <xs:complexType name="content-infotype" mixed="true">
     <xs:complexContent>
       <xs:extension base="infotype">
 	<xs:choice minOccurs="0" maxOccurs="unbounded">
