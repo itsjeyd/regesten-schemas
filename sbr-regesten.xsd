@@ -420,6 +420,16 @@
     </xs:choice>
   </xs:complexType>
 
+  <xs:complexType name="content-infotype">
+    <xs:complexContent>
+      <xs:extension base="infotype">
+	<xs:choice minOccurs="0" maxOccurs="unbounded">
+	  <xs:element name="quote" type="quote" />
+	</xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="content" mixed="true">
     <xs:sequence>
       <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
