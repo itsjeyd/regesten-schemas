@@ -413,13 +413,10 @@
   </xs:complexType>
 
   <xs:complexType name="content-infotype" mixed="true">
-    <xs:complexContent>
-      <xs:extension base="infotype">
-	<xs:choice minOccurs="0" maxOccurs="unbounded">
-	  <xs:element name="quote" type="quote" />
-	</xs:choice>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="quote" type="quote" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="footnote" type="footnote" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="content" mixed="true">
@@ -447,13 +444,10 @@
   <!-- (6.2.2) Quotes -->
 
   <xs:complexType name="quote" mixed="true">
-    <xs:complexContent>
-      <xs:extension base="infotype">
-	<xs:choice minOccurs="0" maxOccurs="unbounded">
-	  <xs:element name="name" type="name" />
-	</xs:choice>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="name" type="name" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="footnote" type="footnote" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="name">
