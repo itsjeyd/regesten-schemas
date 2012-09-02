@@ -71,12 +71,12 @@
       <xs:element name="location" type="infotype" minOccurs="0" />
       <xs:element name="type" type="infotype" minOccurs="0" />
       <xs:element name="content" type="regest-content" />
-      <xs:element name="date-original" type="content" />
-      <xs:element name="sealer" type="infotype" />
-      <xs:element name="archives" type="archives" />
-      <xs:element name="print" type="infotype" />
-      <xs:element name="translation" type="infotype" minOccurs="0" />
-      <xs:element name="original" type="infotype" />
+      <xs:element name="date-original" type="content-infotype" />
+      <xs:element name="sealer" type="content-infotype" />
+      <xs:element name="archives" type="content-infotype" />
+      <xs:element name="print" type="content-infotype" />
+      <xs:element name="translation" type="content-infotype" minOccurs="0" />
+      <xs:element name="original" type="content-infotype" />
     </xs:sequence>
     <xs:attribute name="id" type="regidtype" use="required" />
     <xs:attribute name="title" type="stringtype" />
@@ -131,15 +131,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <!-- (3.3) Archives -->
-
-  <xs:complexType name="archives">
-    <xs:sequence>
-      <xs:element name="archive" type="infotype" maxOccurs="unbounded" />
-    </xs:sequence>
-  </xs:complexType>
-
-  <!-- (3.4) Attributes -->
+  <!-- (3.3) Attributes -->
 
   <xs:simpleType name="regidtype">
     <xs:restriction base="idtype">
