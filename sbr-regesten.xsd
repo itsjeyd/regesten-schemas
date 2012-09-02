@@ -71,8 +71,8 @@
       <xs:element name="location" type="infotype" minOccurs="0" />
       <xs:element name="type" type="infotype" minOccurs="0" />
       <xs:element name="content" type="regest-content" />
-      <xs:element name="date-original" type="content-infotype" />
-      <xs:element name="sealer" type="content-infotype" />
+      <xs:element name="original-date" type="content-infotype" />
+      <xs:element name="seal" type="content-infotype" />
       <xs:element name="archives" type="content-infotype" />
       <xs:element name="print" type="content-infotype" />
       <xs:element name="translation" type="content-infotype" minOccurs="0" />
