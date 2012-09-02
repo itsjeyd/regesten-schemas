@@ -431,11 +431,11 @@
   <!-- (6.2.1) Footnotes -->
 
   <xs:complexType name="footnote">
-    <xs:simpleContent>
+    <xs:complexContent>
       <xs:extension base="content">
 	<xs:attribute name="id" type="fnidtype" />
       </xs:extension>
-    </xs:simpleContent>
+    </xs:complexContent>
   </xs:complexType>
 
   <xs:simpleType name="fnidtype">
