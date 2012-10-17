@@ -80,6 +80,7 @@
     </xs:sequence>
     <xs:attribute name="id" type="regidtype" use="required" />
     <xs:attribute name="title" type="stringtype" />
+    <xs:attribute name="author" type="authortype" />
   </xs:complexType>
 
   <!-- (3.1) Date -->
@@ -136,6 +137,15 @@
   <xs:simpleType name="regidtype">
     <xs:restriction base="idtype">
       <xs:pattern value="regest_[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="authortype">
+    <xs:restriction base="stringtype">
+      <xs:enumeration value="Ed" />
+      <xs:enumeration value="He" />
+      <xs:enumeration value="Jac" />
+      <xs:enumeration value="Kl" />
     </xs:restriction>
   </xs:simpleType>
 
