@@ -274,7 +274,7 @@
   <xs:complexType name="person">
     <xs:sequence>
       <xs:element name="persName" type="persName" />
-      <xs:element name="person-info" type="content" minOccurs="0" />
+      <xs:element name="description" type="content" minOccurs="0" />
       <xs:element name="mentioned-in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
@@ -355,6 +355,7 @@
   <xs:complexType name="concept">
     <xs:sequence>
       <xs:element name="name" type="content" />
+      <xs:element name="description" type="content" minOccurs="0" />
       <xs:element name="mentioned-in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
