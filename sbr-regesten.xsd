@@ -67,7 +67,7 @@
 
   <xs:complexType name="regest">
     <xs:sequence>
-      <xs:element name="date" type="regest-date" />
+      <xs:element name="date" type="regest-date" maxOccurs="unbounded" />
       <xs:element name="location" type="infotype" minOccurs="0" />
       <xs:element name="type" type="infotype" minOccurs="0" />
       <xs:element name="content" type="regest-content" />
