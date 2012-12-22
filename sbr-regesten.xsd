@@ -4,6 +4,8 @@
   <xs:element name="sbr-regesten">
     <xs:complexType>
       <xs:sequence>
+	<xs:element name="frontmatter" type="stringtype" />
+	<xs:element name="toc" type="stringtype" />
 	<xs:element name="preface" type="infotype" />
 	<xs:element name="listBibl" type="listBibl" />          <!-- see (1) -->
 	<xs:element name="abbrev-list" type="abbrev-list" />    <!-- see (2) -->
