@@ -44,7 +44,7 @@
 
   <!-- (2) Abkuerzungsverzeichnis / Siglen  -->
 
-  <xs:complexType name="abbrev-list">
+  <xs:complexType name="abbrev-list" mixed="true">
     <xs:sequence>
       <xs:element name="list-info" type="stringtype" minOccurs="0" />
       <xs:element name="entry" type="abbrev" maxOccurs="unbounded" />
