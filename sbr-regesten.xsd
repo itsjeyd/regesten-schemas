@@ -504,7 +504,7 @@
 
   <!-- (6.4) Concepts: Additional information -->
 
-  <xs:complexType name="addNames">
+  <xs:complexType name="addNames" mixed="true">
     <xs:sequence>
       <xs:element name="addName" type="stringtype" maxOccurs="unbounded" />
     </xs:sequence>
