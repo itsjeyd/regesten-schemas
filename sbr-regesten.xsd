@@ -278,7 +278,7 @@
       <xs:element name="persName" type="persName" />
       <xs:element name="description" type="content" minOccurs="0" />
       <xs:element name="mentioned-in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related-concepts" type="related-concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute name="id" type="persidtype" use="required" />
     <xs:attribute name="itemid" type="idreftype" />
@@ -343,11 +343,11 @@
 
   <xs:complexType name="concept-body">
     <xs:sequence>
-      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" />
+      <xs:element name="related-concepts" type="related-concepts" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="related_concepts" mixed="true">
+  <xs:complexType name="related-concepts" mixed="true">
     <xs:choice maxOccurs="unbounded">
       <xs:element name="concept" type="concept" />
       <xs:element name="person" type="person" />
@@ -359,7 +359,7 @@
       <xs:element name="name" type="content" />
       <xs:element name="description" type="content" minOccurs="0" />
       <xs:element name="mentioned-in" type="mentionings" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="related_concepts" type="related_concepts" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="related-concepts" type="related-concepts" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
 
