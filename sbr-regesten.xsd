@@ -20,7 +20,7 @@
 
   <!-- (1) Literaturverzeichnis -->
 
-  <xs:complexType name="listBibl">
+  <xs:complexType name="listBibl" mixed="true">
     <xs:sequence>
       <xs:element name="listBibl-info" type="stringtype" />
       <xs:element name="bibl" type="bibl" maxOccurs="unbounded" />
@@ -171,7 +171,7 @@
 
   <!-- (5) Index -->
 
-  <xs:complexType name="index">
+  <xs:complexType name="index" mixed="true">
     <xs:sequence>
       <xs:element name="index-info" type="stringtype" />
       <xs:element name="item" type="item" maxOccurs="unbounded" />
@@ -224,7 +224,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="placeName">
+  <xs:complexType name="placeName" mixed="true">
     <xs:sequence>
       <xs:element name="addNames" type="addNames" minOccurs="0" />
       <xs:element name="settlement" type="settlement" />
@@ -347,7 +347,7 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="related_concepts">
+  <xs:complexType name="related_concepts" mixed="true">
     <xs:choice maxOccurs="unbounded">
       <xs:element name="concept" type="concept" />
       <xs:element name="person" type="person" />
@@ -474,7 +474,7 @@
 
   <!-- (6.3) Reference types -->
 
-  <xs:complexType name="mentionings">
+  <xs:complexType name="mentionings" mixed="true">
     <xs:sequence>
       <xs:element name="reg-ref" type="reg-ref" maxOccurs="unbounded" />
     </xs:sequence>
