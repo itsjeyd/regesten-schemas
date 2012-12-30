@@ -488,7 +488,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="index-refs">
+  <xs:complexType name="index-refs" mixed="true">
     <xs:sequence>
       <xs:element name="index-ref" type="index-ref" maxOccurs="unbounded" />
     </xs:sequence>
