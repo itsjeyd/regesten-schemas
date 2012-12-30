@@ -226,7 +226,7 @@
 
   <xs:complexType name="placeName" mixed="true">
     <xs:sequence>
-      <xs:element name="settlement" type="settlement" />
+      <xs:element name="settlement" type="settlement" minOccurs="0"/>
       <xs:element name="addNames" type="addNames" minOccurs="0" />
       <xs:element name="reference-point" type="stringtype" minOccurs="0" />
       <xs:element name="district" type="stringtype" minOccurs="0" />
