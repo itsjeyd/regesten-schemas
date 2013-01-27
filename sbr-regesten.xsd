@@ -97,7 +97,7 @@
 	<xs:element name="to" type="datetype" minOccurs="0" />
 	<xs:element name="offset" type="offset" minOccurs="0" />
       </xs:sequence>
-      <xs:element name="altDate" type="booleantype" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="altDate" type="booleantype" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="exact" type="booleantype" />
   </xs:complexType>
