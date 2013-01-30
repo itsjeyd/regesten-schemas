@@ -234,8 +234,8 @@
     <xs:simpleContent>
       <xs:extension base="stringtype">
 	<xs:attribute name="type" type="stringtype" use="required" />
-	<xs:attribute name="w" type="booleantype" use="required" />
-	<xs:attribute name="w-ref" type="stringtype" />
+	<xs:attribute name="abandoned-village" type="booleantype" use="required" />
+	<xs:attribute name="av-ref" type="stringtype" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
